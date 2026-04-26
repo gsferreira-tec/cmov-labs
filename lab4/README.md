@@ -23,4 +23,6 @@ results into `*.csv`which is great for plots in `python`.
 - Having the `*.csv` files we can use the script `study-plot.py` to generate the plots and store 
 them in `*.png` format.
 
-
+- ***Note:*** this is mentioned for the `studies.sh` script but no for the other, however from the 
+scripts avaliable, to understand how to use them just run them standalone and there will be information
+displayed in the terminal about how to use each of them.
