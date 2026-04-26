@@ -1,0 +1,15 @@
+file,distance_m,run,wireshark_kbit_s
+1st_Study_Distance=100m_Duration=60s_Run=1-0-0.pcap,100,1,20583.533167709644
+1st_Study_Distance=200m_Duration=60s_Run=1-0-0.pcap,200,1,15153.66832927785
+1st_Study_Distance=300m_Duration=60s_Run=1-0-0.pcap,300,1,15088.671122591004
+1st_Study_Distance=400m_Duration=60s_Run=1-0-0.pcap,400,1,11476.13866492507
+1st_Study_Distance=500m_Duration=60s_Run=1-0-0.pcap,500,1,9633.072944858925
+1st_Study_Distance=600m_Duration=60s_Run=1-0-0.pcap,600,1,9613.150302527905
+1st_Study_Distance=700m_Duration=60s_Run=1-0-0.pcap,700,1,9473.667888611106
+1st_Study_Distance=800m_Duration=60s_Run=1-0-0.pcap,800,1,6524.174048637151
+1st_Study_Distance=900m_Duration=60s_Run=1-0-0.pcap,900,1,6930.318505072117
+1st_Study_Distance=1000m_Duration=60s_Run=1-0-0.pcap,1000,1,6815.135924507311
+1st_Study_Distance=1100m_Duration=60s_Run=1-0-0.pcap,1100,1,3727.2215397495856
+1st_Study_Distance=1200m_Duration=60s_Run=1-0-0.pcap,1200,1,3623.847122718057
+1st_Study_Distance=1300m_Duration=60s_Run=1-0-0.pcap,1300,1,3817.068255022228
+1st_Study_Distance=1400m_Duration=60s_Run=1-0-0.pcap,1400,1,2298.130209334404

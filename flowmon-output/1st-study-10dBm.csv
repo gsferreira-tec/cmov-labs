@@ -1,0 +1,5 @@
+file,distance_m,run,flow_id,protocol,rx_kbit_s,tx_kbit_s,delay_ms,loss_pct
+1st_Study_Distance=100m_Duration=60s_Run=1.xml,100,1,1,TCP,15944.7,15943.54,66.88,0.0
+1st_Study_Distance=200m_Duration=60s_Run=1.xml,200,1,1,TCP,10232.42,10231.68,103.37,0.0
+1st_Study_Distance=300m_Duration=60s_Run=1.xml,300,1,1,TCP,7609.86,7609.31,135.53,0.0
+1st_Study_Distance=400m_Duration=60s_Run=1.xml,400,1,1,TCP,4186.7,4186.4,56.9,0.0

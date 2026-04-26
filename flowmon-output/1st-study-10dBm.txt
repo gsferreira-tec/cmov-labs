@@ -1,0 +1,125 @@
+********** 1st_Study_Distance=1000m_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 0.04 kbit/s
+	RX bitrate: None
+	Mean Delay: None
+	Packet Loss Ratio: None
+********** 1st_Study_Distance=100m_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 15943.54 kbit/s
+	RX bitrate: 15944.70 kbit/s
+	Mean Delay: 66.88 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 2 (TCP 10.0.0.1/9 --> 10.0.0.2/49153)
+	TX bitrate: 364.01 kbit/s
+	RX bitrate: 364.04 kbit/s
+	Mean Delay: 1.42 ms
+	Packet Loss Ratio: 0.00 %
+********** 1st_Study_Distance=1100m_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 0.04 kbit/s
+	RX bitrate: None
+	Mean Delay: None
+	Packet Loss Ratio: None
+********** 1st_Study_Distance=1200m_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 0.04 kbit/s
+	RX bitrate: None
+	Mean Delay: None
+	Packet Loss Ratio: None
+********** 1st_Study_Distance=1300m_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 0.04 kbit/s
+	RX bitrate: None
+	Mean Delay: None
+	Packet Loss Ratio: None
+********** 1st_Study_Distance=1400m_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 0.04 kbit/s
+	RX bitrate: None
+	Mean Delay: None
+	Packet Loss Ratio: None
+********** 1st_Study_Distance=1500m_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 0.04 kbit/s
+	RX bitrate: None
+	Mean Delay: None
+	Packet Loss Ratio: None
+********** 1st_Study_Distance=200m_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 10231.68 kbit/s
+	RX bitrate: 10232.42 kbit/s
+	Mean Delay: 103.37 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 2 (TCP 10.0.0.1/9 --> 10.0.0.2/49153)
+	TX bitrate: 233.51 kbit/s
+	RX bitrate: 233.54 kbit/s
+	Mean Delay: 3.07 ms
+	Packet Loss Ratio: 0.00 %
+********** 1st_Study_Distance=300m_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 7609.31 kbit/s
+	RX bitrate: 7609.86 kbit/s
+	Mean Delay: 135.53 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 2 (TCP 10.0.0.1/9 --> 10.0.0.2/49153)
+	TX bitrate: 173.42 kbit/s
+	RX bitrate: 173.44 kbit/s
+	Mean Delay: 7.44 ms
+	Packet Loss Ratio: 0.00 %
+********** 1st_Study_Distance=400m_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 4186.40 kbit/s
+	RX bitrate: 4186.70 kbit/s
+	Mean Delay: 56.90 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 2 (TCP 10.0.0.1/9 --> 10.0.0.2/49153)
+	TX bitrate: 95.01 kbit/s
+	RX bitrate: 95.01 kbit/s
+	Mean Delay: 202.29 ms
+	Packet Loss Ratio: 0.00 %
+********** 1st_Study_Distance=500m_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 0.04 kbit/s
+	RX bitrate: None
+	Mean Delay: None
+	Packet Loss Ratio: None
+********** 1st_Study_Distance=600m_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 0.04 kbit/s
+	RX bitrate: None
+	Mean Delay: None
+	Packet Loss Ratio: None
+********** 1st_Study_Distance=700m_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 0.04 kbit/s
+	RX bitrate: None
+	Mean Delay: None
+	Packet Loss Ratio: None
+********** 1st_Study_Distance=800m_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 0.04 kbit/s
+	RX bitrate: None
+	Mean Delay: None
+	Packet Loss Ratio: None
+********** 1st_Study_Distance=900m_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 0.04 kbit/s
+	RX bitrate: None
+	Mean Delay: None
+	Packet Loss Ratio: None

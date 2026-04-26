@@ -1,0 +1,1213 @@
+********** 2nd_Study_NrOfSenders=10_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.9/49153 --> 10.0.0.1/9)
+	TX bitrate: 2439.53 kbit/s
+	RX bitrate: 2439.80 kbit/s
+	Mean Delay: 18.67 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 2 (TCP 10.0.0.1/9 --> 10.0.0.9/49153)
+	TX bitrate: 55.23 kbit/s
+	RX bitrate: 55.21 kbit/s
+	Mean Delay: 436.28 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 3 (TCP 10.0.0.8/49153 --> 10.0.0.1/9)
+	TX bitrate: 2074.49 kbit/s
+	RX bitrate: 2111.59 kbit/s
+	Mean Delay: 15.20 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 4 (TCP 10.0.0.3/49153 --> 10.0.0.1/9)
+	TX bitrate: 2161.94 kbit/s
+	RX bitrate: 2162.01 kbit/s
+	Mean Delay: 13.54 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 5 (TCP 10.0.0.1/9 --> 10.0.0.3/49153)
+	TX bitrate: 48.54 kbit/s
+	RX bitrate: 48.54 kbit/s
+	Mean Delay: 490.60 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 6 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 2195.26 kbit/s
+	RX bitrate: 2196.70 kbit/s
+	Mean Delay: 14.47 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 7 (TCP 10.0.0.1/9 --> 10.0.0.2/49153)
+	TX bitrate: 49.84 kbit/s
+	RX bitrate: 49.78 kbit/s
+	Mean Delay: 484.43 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 8 (TCP 10.0.0.1/9 --> 10.0.0.8/49153)
+	TX bitrate: 47.91 kbit/s
+	RX bitrate: 47.94 kbit/s
+	Mean Delay: 500.25 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 9 (TCP 10.0.0.10/49153 --> 10.0.0.1/9)
+	TX bitrate: 1868.51 kbit/s
+	RX bitrate: 1985.55 kbit/s
+	Mean Delay: 15.52 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 10 (TCP 10.0.0.4/49153 --> 10.0.0.1/9)
+	TX bitrate: 2082.17 kbit/s
+	RX bitrate: 2087.23 kbit/s
+	Mean Delay: 14.08 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 11 (TCP 10.0.0.11/49153 --> 10.0.0.1/9)
+	TX bitrate: 1992.07 kbit/s
+	RX bitrate: 1996.71 kbit/s
+	Mean Delay: 15.88 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 12 (TCP 10.0.0.1/9 --> 10.0.0.4/49153)
+	TX bitrate: 47.35 kbit/s
+	RX bitrate: 47.49 kbit/s
+	Mean Delay: 504.31 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 13 (TCP 10.0.0.6/49153 --> 10.0.0.1/9)
+	TX bitrate: 2048.65 kbit/s
+	RX bitrate: 2053.97 kbit/s
+	Mean Delay: 14.14 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 14 (TCP 10.0.0.5/49153 --> 10.0.0.1/9)
+	TX bitrate: 2052.55 kbit/s
+	RX bitrate: 2057.58 kbit/s
+	Mean Delay: 15.44 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 15 (TCP 10.0.0.1/9 --> 10.0.0.11/49153)
+	TX bitrate: 45.91 kbit/s
+	RX bitrate: 46.81 kbit/s
+	Mean Delay: 512.11 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 16 (TCP 10.0.0.1/9 --> 10.0.0.6/49153)
+	TX bitrate: 47.30 kbit/s
+	RX bitrate: 47.50 kbit/s
+	Mean Delay: 511.69 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 17 (TCP 10.0.0.1/9 --> 10.0.0.5/49153)
+	TX bitrate: 47.39 kbit/s
+	RX bitrate: 47.60 kbit/s
+	Mean Delay: 509.34 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 18 (TCP 10.0.0.7/49153 --> 10.0.0.1/9)
+	TX bitrate: 2035.64 kbit/s
+	RX bitrate: 2041.13 kbit/s
+	Mean Delay: 15.34 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 19 (TCP 10.0.0.1/9 --> 10.0.0.7/49153)
+	TX bitrate: 46.90 kbit/s
+	RX bitrate: 47.18 kbit/s
+	Mean Delay: 509.74 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 20 (TCP 10.0.0.1/9 --> 10.0.0.10/49153)
+	TX bitrate: 45.60 kbit/s
+	RX bitrate: 46.27 kbit/s
+	Mean Delay: 515.68 ms
+	Packet Loss Ratio: 0.00 %
+********** 2nd_Study_NrOfSenders=11_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.11/49153 --> 10.0.0.1/9)
+	TX bitrate: 2055.18 kbit/s
+	RX bitrate: 2055.44 kbit/s
+	Mean Delay: 16.47 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 2 (TCP 10.0.0.1/9 --> 10.0.0.11/49153)
+	TX bitrate: 46.50 kbit/s
+	RX bitrate: 46.46 kbit/s
+	Mean Delay: 521.44 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 3 (TCP 10.0.0.9/49153 --> 10.0.0.1/9)
+	TX bitrate: 1912.13 kbit/s
+	RX bitrate: 1912.35 kbit/s
+	Mean Delay: 16.31 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 4 (TCP 10.0.0.1/9 --> 10.0.0.9/49153)
+	TX bitrate: 42.84 kbit/s
+	RX bitrate: 42.77 kbit/s
+	Mean Delay: 546.74 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 5 (TCP 10.0.0.12/49153 --> 10.0.0.1/9)
+	TX bitrate: 1982.91 kbit/s
+	RX bitrate: 1986.23 kbit/s
+	Mean Delay: 14.91 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 6 (TCP 10.0.0.1/9 --> 10.0.0.12/49153)
+	TX bitrate: 44.99 kbit/s
+	RX bitrate: 44.96 kbit/s
+	Mean Delay: 536.63 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 7 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 1987.83 kbit/s
+	RX bitrate: 1987.94 kbit/s
+	Mean Delay: 14.38 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 8 (TCP 10.0.0.1/9 --> 10.0.0.2/49153)
+	TX bitrate: 45.07 kbit/s
+	RX bitrate: 45.06 kbit/s
+	Mean Delay: 536.17 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 9 (TCP 10.0.0.4/49153 --> 10.0.0.1/9)
+	TX bitrate: 1929.92 kbit/s
+	RX bitrate: 1932.33 kbit/s
+	Mean Delay: 15.69 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 10 (TCP 10.0.0.1/9 --> 10.0.0.4/49153)
+	TX bitrate: 43.81 kbit/s
+	RX bitrate: 43.85 kbit/s
+	Mean Delay: 548.06 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 11 (TCP 10.0.0.3/49153 --> 10.0.0.1/9)
+	TX bitrate: 1792.51 kbit/s
+	RX bitrate: 1831.24 kbit/s
+	Mean Delay: 17.07 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 12 (TCP 10.0.0.5/49153 --> 10.0.0.1/9)
+	TX bitrate: 1706.00 kbit/s
+	RX bitrate: 1811.72 kbit/s
+	Mean Delay: 16.35 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 13 (TCP 10.0.0.8/49153 --> 10.0.0.1/9)
+	TX bitrate: 1849.17 kbit/s
+	RX bitrate: 1855.27 kbit/s
+	Mean Delay: 16.68 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 14 (TCP 10.0.0.7/49153 --> 10.0.0.1/9)
+	TX bitrate: 1875.34 kbit/s
+	RX bitrate: 1881.82 kbit/s
+	Mean Delay: 16.90 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 15 (TCP 10.0.0.6/49153 --> 10.0.0.1/9)
+	TX bitrate: 1824.39 kbit/s
+	RX bitrate: 1830.98 kbit/s
+	Mean Delay: 17.27 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 16 (TCP 10.0.0.1/9 --> 10.0.0.8/49153)
+	TX bitrate: 42.73 kbit/s
+	RX bitrate: 42.95 kbit/s
+	Mean Delay: 564.35 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 17 (TCP 10.0.0.1/9 --> 10.0.0.7/49153)
+	TX bitrate: 43.34 kbit/s
+	RX bitrate: 43.58 kbit/s
+	Mean Delay: 554.91 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 18 (TCP 10.0.0.10/49153 --> 10.0.0.1/9)
+	TX bitrate: 1839.41 kbit/s
+	RX bitrate: 1846.20 kbit/s
+	Mean Delay: 16.13 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 19 (TCP 10.0.0.1/9 --> 10.0.0.6/49153)
+	TX bitrate: 42.15 kbit/s
+	RX bitrate: 42.41 kbit/s
+	Mean Delay: 569.56 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 20 (TCP 10.0.0.1/9 --> 10.0.0.10/49153)
+	TX bitrate: 42.50 kbit/s
+	RX bitrate: 42.81 kbit/s
+	Mean Delay: 564.53 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 21 (TCP 10.0.0.1/9 --> 10.0.0.3/49153)
+	TX bitrate: 42.15 kbit/s
+	RX bitrate: 42.48 kbit/s
+	Mean Delay: 566.59 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 22 (TCP 10.0.0.1/9 --> 10.0.0.5/49153)
+	TX bitrate: 41.71 kbit/s
+	RX bitrate: 42.31 kbit/s
+	Mean Delay: 566.21 ms
+	Packet Loss Ratio: 0.00 %
+********** 2nd_Study_NrOfSenders=12_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.13/49153 --> 10.0.0.1/9)
+	TX bitrate: 1889.00 kbit/s
+	RX bitrate: 1889.20 kbit/s
+	Mean Delay: 21.24 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 2 (TCP 10.0.0.1/9 --> 10.0.0.13/49153)
+	TX bitrate: 42.63 kbit/s
+	RX bitrate: 42.52 kbit/s
+	Mean Delay: 562.98 ms
+	Packet Loss Ratio: 0.23 %
+FlowID: 3 (TCP 10.0.0.7/49153 --> 10.0.0.1/9)
+	TX bitrate: 1844.62 kbit/s
+	RX bitrate: 1844.78 kbit/s
+	Mean Delay: 24.14 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 4 (TCP 10.0.0.1/9 --> 10.0.0.7/49153)
+	TX bitrate: 42.33 kbit/s
+	RX bitrate: 42.22 kbit/s
+	Mean Delay: 572.08 ms
+	Packet Loss Ratio: 0.15 %
+FlowID: 5 (TCP 10.0.0.10/49153 --> 10.0.0.1/9)
+	TX bitrate: 1684.37 kbit/s
+	RX bitrate: 1684.86 kbit/s
+	Mean Delay: 17.70 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 6 (TCP 10.0.0.1/9 --> 10.0.0.10/49153)
+	TX bitrate: 38.79 kbit/s
+	RX bitrate: 39.48 kbit/s
+	Mean Delay: 614.61 ms
+	Packet Loss Ratio: 0.02 %
+FlowID: 7 (TCP 10.0.0.3/49153 --> 10.0.0.1/9)
+	TX bitrate: 1643.48 kbit/s
+	RX bitrate: 1678.61 kbit/s
+	Mean Delay: 17.72 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 8 (TCP 10.0.0.5/49153 --> 10.0.0.1/9)
+	TX bitrate: 1786.73 kbit/s
+	RX bitrate: 1787.04 kbit/s
+	Mean Delay: 16.37 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 9 (TCP 10.0.0.1/9 --> 10.0.0.5/49153)
+	TX bitrate: 40.30 kbit/s
+	RX bitrate: 40.23 kbit/s
+	Mean Delay: 597.63 ms
+	Packet Loss Ratio: 0.07 %
+FlowID: 10 (TCP 10.0.0.6/49153 --> 10.0.0.1/9)
+	TX bitrate: 1792.96 kbit/s
+	RX bitrate: 1794.14 kbit/s
+	Mean Delay: 16.42 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 11 (TCP 10.0.0.11/49153 --> 10.0.0.1/9)
+	TX bitrate: 1789.79 kbit/s
+	RX bitrate: 1790.90 kbit/s
+	Mean Delay: 17.81 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 12 (TCP 10.0.0.1/9 --> 10.0.0.6/49153)
+	TX bitrate: 40.66 kbit/s
+	RX bitrate: 40.56 kbit/s
+	Mean Delay: 592.77 ms
+	Packet Loss Ratio: 0.19 %
+FlowID: 13 (TCP 10.0.0.1/9 --> 10.0.0.11/49153)
+	TX bitrate: 40.62 kbit/s
+	RX bitrate: 40.57 kbit/s
+	Mean Delay: 592.25 ms
+	Packet Loss Ratio: 0.03 %
+FlowID: 14 (TCP 10.0.0.8/49153 --> 10.0.0.1/9)
+	TX bitrate: 1713.84 kbit/s
+	RX bitrate: 1717.04 kbit/s
+	Mean Delay: 17.25 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 15 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 1624.50 kbit/s
+	RX bitrate: 1660.75 kbit/s
+	Mean Delay: 17.68 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 16 (TCP 10.0.0.1/9 --> 10.0.0.8/49153)
+	TX bitrate: 39.54 kbit/s
+	RX bitrate: 39.73 kbit/s
+	Mean Delay: 611.49 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 17 (TCP 10.0.0.4/49153 --> 10.0.0.1/9)
+	TX bitrate: 1673.05 kbit/s
+	RX bitrate: 1680.39 kbit/s
+	Mean Delay: 16.20 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 18 (TCP 10.0.0.9/49153 --> 10.0.0.1/9)
+	TX bitrate: 1646.27 kbit/s
+	RX bitrate: 1653.30 kbit/s
+	Mean Delay: 17.67 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 19 (TCP 10.0.0.1/9 --> 10.0.0.3/49153)
+	TX bitrate: 38.62 kbit/s
+	RX bitrate: 38.78 kbit/s
+	Mean Delay: 621.01 ms
+	Packet Loss Ratio: 0.26 %
+FlowID: 20 (TCP 10.0.0.1/9 --> 10.0.0.4/49153)
+	TX bitrate: 38.68 kbit/s
+	RX bitrate: 38.94 kbit/s
+	Mean Delay: 620.80 ms
+	Packet Loss Ratio: 0.06 %
+FlowID: 21 (TCP 10.0.0.1/9 --> 10.0.0.9/49153)
+	TX bitrate: 38.05 kbit/s
+	RX bitrate: 38.58 kbit/s
+	Mean Delay: 622.95 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 22 (TCP 10.0.0.12/49153 --> 10.0.0.1/9)
+	TX bitrate: 1653.81 kbit/s
+	RX bitrate: 1662.24 kbit/s
+	Mean Delay: 17.94 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 23 (TCP 10.0.0.1/9 --> 10.0.0.12/49153)
+	TX bitrate: 38.24 kbit/s
+	RX bitrate: 38.66 kbit/s
+	Mean Delay: 621.14 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 24 (TCP 10.0.0.1/9 --> 10.0.0.2/49153)
+	TX bitrate: 38.25 kbit/s
+	RX bitrate: 38.66 kbit/s
+	Mean Delay: 621.03 ms
+	Packet Loss Ratio: 0.00 %
+********** 2nd_Study_NrOfSenders=13_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.9/49153 --> 10.0.0.1/9)
+	TX bitrate: 1995.96 kbit/s
+	RX bitrate: 1996.27 kbit/s
+	Mean Delay: 20.62 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 2 (TCP 10.0.0.1/9 --> 10.0.0.9/49153)
+	TX bitrate: 45.15 kbit/s
+	RX bitrate: 45.09 kbit/s
+	Mean Delay: 537.57 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 3 (TCP 10.0.0.11/49153 --> 10.0.0.1/9)
+	TX bitrate: 1608.95 kbit/s
+	RX bitrate: 1673.18 kbit/s
+	Mean Delay: 18.19 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 4 (TCP 10.0.0.13/49153 --> 10.0.0.1/9)
+	TX bitrate: 1797.63 kbit/s
+	RX bitrate: 1797.81 kbit/s
+	Mean Delay: 15.39 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 5 (TCP 10.0.0.1/9 --> 10.0.0.13/49153)
+	TX bitrate: 39.68 kbit/s
+	RX bitrate: 39.61 kbit/s
+	Mean Delay: 588.64 ms
+	Packet Loss Ratio: 0.02 %
+FlowID: 6 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 1743.90 kbit/s
+	RX bitrate: 1744.21 kbit/s
+	Mean Delay: 17.70 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 7 (TCP 10.0.0.8/49153 --> 10.0.0.1/9)
+	TX bitrate: 0.04 kbit/s
+	RX bitrate: None
+	Mean Delay: None
+	Packet Loss Ratio: None
+FlowID: 8 (TCP 10.0.0.1/9 --> 10.0.0.2/49153)
+	TX bitrate: 39.06 kbit/s
+	RX bitrate: 39.03 kbit/s
+	Mean Delay: 598.34 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 9 (TCP 10.0.0.5/49153 --> 10.0.0.1/9)
+	TX bitrate: 1752.05 kbit/s
+	RX bitrate: 1752.22 kbit/s
+	Mean Delay: 17.31 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 10 (TCP 10.0.0.1/9 --> 10.0.0.5/49153)
+	TX bitrate: 38.71 kbit/s
+	RX bitrate: 38.68 kbit/s
+	Mean Delay: 596.57 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 11 (TCP 10.0.0.3/49153 --> 10.0.0.1/9)
+	TX bitrate: 1743.17 kbit/s
+	RX bitrate: 1746.05 kbit/s
+	Mean Delay: 17.07 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 12 (TCP 10.0.0.10/49153 --> 10.0.0.1/9)
+	TX bitrate: 1765.83 kbit/s
+	RX bitrate: 1769.00 kbit/s
+	Mean Delay: 16.07 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 13 (TCP 10.0.0.14/49153 --> 10.0.0.1/9)
+	TX bitrate: 1762.59 kbit/s
+	RX bitrate: 1765.84 kbit/s
+	Mean Delay: 19.17 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 14 (TCP 10.0.0.1/9 --> 10.0.0.3/49153)
+	TX bitrate: 39.57 kbit/s
+	RX bitrate: 39.81 kbit/s
+	Mean Delay: 601.95 ms
+	Packet Loss Ratio: 0.05 %
+FlowID: 15 (TCP 10.0.0.1/9 --> 10.0.0.10/49153)
+	TX bitrate: 40.11 kbit/s
+	RX bitrate: 40.10 kbit/s
+	Mean Delay: 598.71 ms
+	Packet Loss Ratio: 0.16 %
+FlowID: 16 (TCP 10.0.0.1/9 --> 10.0.0.14/49153)
+	TX bitrate: 40.03 kbit/s
+	RX bitrate: 40.10 kbit/s
+	Mean Delay: 597.20 ms
+	Packet Loss Ratio: 0.02 %
+FlowID: 17 (TCP 10.0.0.4/49153 --> 10.0.0.1/9)
+	TX bitrate: 1686.36 kbit/s
+	RX bitrate: 1691.27 kbit/s
+	Mean Delay: 16.82 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 18 (TCP 10.0.0.12/49153 --> 10.0.0.1/9)
+	TX bitrate: 1667.12 kbit/s
+	RX bitrate: 1673.24 kbit/s
+	Mean Delay: 18.46 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 19 (TCP 10.0.0.7/49153 --> 10.0.0.1/9)
+	TX bitrate: 1681.78 kbit/s
+	RX bitrate: 1688.18 kbit/s
+	Mean Delay: 19.97 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 20 (TCP 10.0.0.1/9 --> 10.0.0.4/49153)
+	TX bitrate: 38.92 kbit/s
+	RX bitrate: 39.12 kbit/s
+	Mean Delay: 618.47 ms
+	Packet Loss Ratio: 0.11 %
+FlowID: 21 (TCP 10.0.0.1/9 --> 10.0.0.12/49153)
+	TX bitrate: 38.49 kbit/s
+	RX bitrate: 39.06 kbit/s
+	Mean Delay: 616.16 ms
+	Packet Loss Ratio: 0.04 %
+FlowID: 22 (TCP 10.0.0.1/9 --> 10.0.0.7/49153)
+	TX bitrate: 38.28 kbit/s
+	RX bitrate: 38.55 kbit/s
+	Mean Delay: 611.33 ms
+	Packet Loss Ratio: 0.04 %
+FlowID: 23 (TCP 10.0.0.6/49153 --> 10.0.0.1/9)
+	TX bitrate: 1662.96 kbit/s
+	RX bitrate: 1670.94 kbit/s
+	Mean Delay: 17.06 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 24 (TCP 10.0.0.1/9 --> 10.0.0.6/49153)
+	TX bitrate: 38.47 kbit/s
+	RX bitrate: 38.81 kbit/s
+	Mean Delay: 621.56 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 25 (TCP 10.0.0.1/9 --> 10.0.0.11/49153)
+	TX bitrate: 38.52 kbit/s
+	RX bitrate: 38.90 kbit/s
+	Mean Delay: 616.28 ms
+	Packet Loss Ratio: 0.00 %
+********** 2nd_Study_NrOfSenders=14_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.11/49153 --> 10.0.0.1/9)
+	TX bitrate: 1689.57 kbit/s
+	RX bitrate: 1689.84 kbit/s
+	Mean Delay: 25.18 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 2 (TCP 10.0.0.1/9 --> 10.0.0.11/49153)
+	TX bitrate: 37.61 kbit/s
+	RX bitrate: 37.36 kbit/s
+	Mean Delay: 632.65 ms
+	Packet Loss Ratio: 0.41 %
+FlowID: 3 (TCP 10.0.0.4/49153 --> 10.0.0.1/9)
+	TX bitrate: 1430.11 kbit/s
+	RX bitrate: 1458.87 kbit/s
+	Mean Delay: 24.81 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 4 (TCP 10.0.0.10/49153 --> 10.0.0.1/9)
+	TX bitrate: 1620.84 kbit/s
+	RX bitrate: 1621.00 kbit/s
+	Mean Delay: 21.28 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 5 (TCP 10.0.0.1/9 --> 10.0.0.10/49153)
+	TX bitrate: 36.10 kbit/s
+	RX bitrate: 36.05 kbit/s
+	Mean Delay: 660.29 ms
+	Packet Loss Ratio: 0.08 %
+FlowID: 6 (TCP 10.0.0.3/49153 --> 10.0.0.1/9)
+	TX bitrate: 1564.14 kbit/s
+	RX bitrate: 1564.99 kbit/s
+	Mean Delay: 25.36 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 7 (TCP 10.0.0.1/9 --> 10.0.0.3/49153)
+	TX bitrate: 35.46 kbit/s
+	RX bitrate: 35.30 kbit/s
+	Mean Delay: 674.69 ms
+	Packet Loss Ratio: 0.34 %
+FlowID: 8 (TCP 10.0.0.8/49153 --> 10.0.0.1/9)
+	TX bitrate: 1400.49 kbit/s
+	RX bitrate: 1432.75 kbit/s
+	Mean Delay: 26.40 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 9 (TCP 10.0.0.6/49153 --> 10.0.0.1/9)
+	TX bitrate: 1559.75 kbit/s
+	RX bitrate: 1561.98 kbit/s
+	Mean Delay: 22.79 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 10 (TCP 10.0.0.15/49153 --> 10.0.0.1/9)
+	TX bitrate: 1522.24 kbit/s
+	RX bitrate: 1524.46 kbit/s
+	Mean Delay: 22.10 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 11 (TCP 10.0.0.5/49153 --> 10.0.0.1/9)
+	TX bitrate: 1536.91 kbit/s
+	RX bitrate: 1538.79 kbit/s
+	Mean Delay: 21.48 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 12 (TCP 10.0.0.1/9 --> 10.0.0.6/49153)
+	TX bitrate: 35.39 kbit/s
+	RX bitrate: 35.27 kbit/s
+	Mean Delay: 676.50 ms
+	Packet Loss Ratio: 0.26 %
+FlowID: 13 (TCP 10.0.0.1/9 --> 10.0.0.15/49153)
+	TX bitrate: 34.99 kbit/s
+	RX bitrate: 34.71 kbit/s
+	Mean Delay: 694.57 ms
+	Packet Loss Ratio: 0.74 %
+FlowID: 14 (TCP 10.0.0.1/9 --> 10.0.0.5/49153)
+	TX bitrate: 34.87 kbit/s
+	RX bitrate: 34.79 kbit/s
+	Mean Delay: 686.33 ms
+	Packet Loss Ratio: 0.18 %
+FlowID: 15 (TCP 10.0.0.7/49153 --> 10.0.0.1/9)
+	TX bitrate: 1493.86 kbit/s
+	RX bitrate: 1496.02 kbit/s
+	Mean Delay: 22.68 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 16 (TCP 10.0.0.14/49153 --> 10.0.0.1/9)
+	TX bitrate: 1439.57 kbit/s
+	RX bitrate: 1442.14 kbit/s
+	Mean Delay: 22.89 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 17 (TCP 10.0.0.1/9 --> 10.0.0.7/49153)
+	TX bitrate: 34.44 kbit/s
+	RX bitrate: 34.43 kbit/s
+	Mean Delay: 700.36 ms
+	Packet Loss Ratio: 0.18 %
+FlowID: 18 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 1457.93 kbit/s
+	RX bitrate: 1460.62 kbit/s
+	Mean Delay: 23.17 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 19 (TCP 10.0.0.1/9 --> 10.0.0.14/49153)
+	TX bitrate: 34.15 kbit/s
+	RX bitrate: 34.18 kbit/s
+	Mean Delay: 726.53 ms
+	Packet Loss Ratio: 0.17 %
+FlowID: 20 (TCP 10.0.0.1/9 --> 10.0.0.2/49153)
+	TX bitrate: 34.08 kbit/s
+	RX bitrate: 34.11 kbit/s
+	Mean Delay: 713.53 ms
+	Packet Loss Ratio: 0.41 %
+FlowID: 21 (TCP 10.0.0.9/49153 --> 10.0.0.1/9)
+	TX bitrate: 1434.12 kbit/s
+	RX bitrate: 1440.60 kbit/s
+	Mean Delay: 23.14 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 22 (TCP 10.0.0.1/9 --> 10.0.0.4/49153)
+	TX bitrate: 33.57 kbit/s
+	RX bitrate: 33.69 kbit/s
+	Mean Delay: 708.70 ms
+	Packet Loss Ratio: 0.34 %
+FlowID: 23 (TCP 10.0.0.1/9 --> 10.0.0.9/49153)
+	TX bitrate: 33.09 kbit/s
+	RX bitrate: 33.19 kbit/s
+	Mean Delay: 714.99 ms
+	Packet Loss Ratio: 0.65 %
+FlowID: 24 (TCP 10.0.0.12/49153 --> 10.0.0.1/9)
+	TX bitrate: 1428.11 kbit/s
+	RX bitrate: 1437.03 kbit/s
+	Mean Delay: 23.41 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 25 (TCP 10.0.0.13/49153 --> 10.0.0.1/9)
+	TX bitrate: 1425.58 kbit/s
+	RX bitrate: 1434.45 kbit/s
+	Mean Delay: 21.46 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 26 (TCP 10.0.0.1/9 --> 10.0.0.8/49153)
+	TX bitrate: 32.98 kbit/s
+	RX bitrate: 33.37 kbit/s
+	Mean Delay: 711.76 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 27 (TCP 10.0.0.1/9 --> 10.0.0.12/49153)
+	TX bitrate: 33.09 kbit/s
+	RX bitrate: 33.48 kbit/s
+	Mean Delay: 711.11 ms
+	Packet Loss Ratio: 0.07 %
+FlowID: 28 (TCP 10.0.0.1/9 --> 10.0.0.13/49153)
+	TX bitrate: 32.99 kbit/s
+	RX bitrate: 33.44 kbit/s
+	Mean Delay: 715.64 ms
+	Packet Loss Ratio: 0.02 %
+********** 2nd_Study_NrOfSenders=15_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.9/49153 --> 10.0.0.1/9)
+	TX bitrate: 1608.99 kbit/s
+	RX bitrate: 1609.25 kbit/s
+	Mean Delay: 23.44 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 2 (TCP 10.0.0.1/9 --> 10.0.0.9/49153)
+	TX bitrate: 36.69 kbit/s
+	RX bitrate: 36.52 kbit/s
+	Mean Delay: 671.07 ms
+	Packet Loss Ratio: 0.26 %
+FlowID: 3 (TCP 10.0.0.7/49153 --> 10.0.0.1/9)
+	TX bitrate: 1450.34 kbit/s
+	RX bitrate: 1450.50 kbit/s
+	Mean Delay: 22.34 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 4 (TCP 10.0.0.1/9 --> 10.0.0.7/49153)
+	TX bitrate: 32.36 kbit/s
+	RX bitrate: 32.73 kbit/s
+	Mean Delay: 712.63 ms
+	Packet Loss Ratio: 0.75 %
+FlowID: 5 (TCP 10.0.0.8/49153 --> 10.0.0.1/9)
+	TX bitrate: 1568.99 kbit/s
+	RX bitrate: 1569.70 kbit/s
+	Mean Delay: 21.80 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 6 (TCP 10.0.0.1/9 --> 10.0.0.8/49153)
+	TX bitrate: 35.69 kbit/s
+	RX bitrate: 35.30 kbit/s
+	Mean Delay: 688.79 ms
+	Packet Loss Ratio: 0.97 %
+FlowID: 7 (TCP 10.0.0.14/49153 --> 10.0.0.1/9)
+	TX bitrate: 1555.31 kbit/s
+	RX bitrate: 1556.36 kbit/s
+	Mean Delay: 23.14 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 8 (TCP 10.0.0.1/9 --> 10.0.0.14/49153)
+	TX bitrate: 35.58 kbit/s
+	RX bitrate: 35.25 kbit/s
+	Mean Delay: 683.37 ms
+	Packet Loss Ratio: 1.00 %
+FlowID: 9 (TCP 10.0.0.11/49153 --> 10.0.0.1/9)
+	TX bitrate: 1365.25 kbit/s
+	RX bitrate: 1393.13 kbit/s
+	Mean Delay: 25.58 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 10 (TCP 10.0.0.13/49153 --> 10.0.0.1/9)
+	TX bitrate: 1505.45 kbit/s
+	RX bitrate: 1506.47 kbit/s
+	Mean Delay: 21.89 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 11 (TCP 10.0.0.1/9 --> 10.0.0.13/49153)
+	TX bitrate: 34.11 kbit/s
+	RX bitrate: 33.88 kbit/s
+	Mean Delay: 703.13 ms
+	Packet Loss Ratio: 0.60 %
+FlowID: 12 (TCP 10.0.0.15/49153 --> 10.0.0.1/9)
+	TX bitrate: 1306.49 kbit/s
+	RX bitrate: 1335.43 kbit/s
+	Mean Delay: 21.63 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 13 (TCP 10.0.0.5/49153 --> 10.0.0.1/9)
+	TX bitrate: 1316.32 kbit/s
+	RX bitrate: 1346.20 kbit/s
+	Mean Delay: 24.34 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 14 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 1381.80 kbit/s
+	RX bitrate: 1386.36 kbit/s
+	Mean Delay: 26.01 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 15 (TCP 10.0.0.10/49153 --> 10.0.0.1/9)
+	TX bitrate: 1407.74 kbit/s
+	RX bitrate: 1412.60 kbit/s
+	Mean Delay: 23.82 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 16 (TCP 10.0.0.1/9 --> 10.0.0.2/49153)
+	TX bitrate: 31.88 kbit/s
+	RX bitrate: 31.88 kbit/s
+	Mean Delay: 750.89 ms
+	Packet Loss Ratio: 0.47 %
+FlowID: 17 (TCP 10.0.0.12/49153 --> 10.0.0.1/9)
+	TX bitrate: 1295.35 kbit/s
+	RX bitrate: 1325.03 kbit/s
+	Mean Delay: 21.75 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 18 (TCP 10.0.0.1/9 --> 10.0.0.11/49153)
+	TX bitrate: 31.97 kbit/s
+	RX bitrate: 31.76 kbit/s
+	Mean Delay: 748.12 ms
+	Packet Loss Ratio: 1.14 %
+FlowID: 19 (TCP 10.0.0.1/9 --> 10.0.0.10/49153)
+	TX bitrate: 31.99 kbit/s
+	RX bitrate: 31.99 kbit/s
+	Mean Delay: 737.99 ms
+	Packet Loss Ratio: 0.51 %
+FlowID: 20 (TCP 10.0.0.6/49153 --> 10.0.0.1/9)
+	TX bitrate: 1311.99 kbit/s
+	RX bitrate: 1344.90 kbit/s
+	Mean Delay: 26.18 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 21 (TCP 10.0.0.4/49153 --> 10.0.0.1/9)
+	TX bitrate: 1344.10 kbit/s
+	RX bitrate: 1350.34 kbit/s
+	Mean Delay: 24.00 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 22 (TCP 10.0.0.16/49153 --> 10.0.0.1/9)
+	TX bitrate: 1345.41 kbit/s
+	RX bitrate: 1351.87 kbit/s
+	Mean Delay: 26.91 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 23 (TCP 10.0.0.3/49153 --> 10.0.0.1/9)
+	TX bitrate: 1349.52 kbit/s
+	RX bitrate: 1355.82 kbit/s
+	Mean Delay: 23.21 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 24 (TCP 10.0.0.1/9 --> 10.0.0.4/49153)
+	TX bitrate: 31.03 kbit/s
+	RX bitrate: 31.06 kbit/s
+	Mean Delay: 765.42 ms
+	Packet Loss Ratio: 0.65 %
+FlowID: 25 (TCP 10.0.0.1/9 --> 10.0.0.3/49153)
+	TX bitrate: 31.15 kbit/s
+	RX bitrate: 31.29 kbit/s
+	Mean Delay: 762.03 ms
+	Packet Loss Ratio: 0.42 %
+FlowID: 26 (TCP 10.0.0.1/9 --> 10.0.0.16/49153)
+	TX bitrate: 31.11 kbit/s
+	RX bitrate: 31.35 kbit/s
+	Mean Delay: 760.53 ms
+	Packet Loss Ratio: 0.07 %
+FlowID: 27 (TCP 10.0.0.1/9 --> 10.0.0.15/49153)
+	TX bitrate: 31.16 kbit/s
+	RX bitrate: 31.31 kbit/s
+	Mean Delay: 774.95 ms
+	Packet Loss Ratio: 0.42 %
+FlowID: 28 (TCP 10.0.0.1/9 --> 10.0.0.5/49153)
+	TX bitrate: 30.96 kbit/s
+	RX bitrate: 31.19 kbit/s
+	Mean Delay: 762.76 ms
+	Packet Loss Ratio: 0.33 %
+FlowID: 29 (TCP 10.0.0.1/9 --> 10.0.0.12/49153)
+	TX bitrate: 30.95 kbit/s
+	RX bitrate: 31.28 kbit/s
+	Mean Delay: 775.00 ms
+	Packet Loss Ratio: 0.14 %
+FlowID: 30 (TCP 10.0.0.1/9 --> 10.0.0.6/49153)
+	TX bitrate: 30.96 kbit/s
+	RX bitrate: 31.37 kbit/s
+	Mean Delay: 755.98 ms
+	Packet Loss Ratio: 0.02 %
+********** 2nd_Study_NrOfSenders=2_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.3/49153 --> 10.0.0.1/9)
+	TX bitrate: 10480.53 kbit/s
+	RX bitrate: 10482.25 kbit/s
+	Mean Delay: 75.64 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 2 (TCP 10.0.0.1/9 --> 10.0.0.3/49153)
+	TX bitrate: 239.24 kbit/s
+	RX bitrate: 239.22 kbit/s
+	Mean Delay: 28.42 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 3 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 10611.33 kbit/s
+	RX bitrate: 10611.67 kbit/s
+	Mean Delay: 73.62 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 4 (TCP 10.0.0.1/9 --> 10.0.0.2/49153)
+	TX bitrate: 241.84 kbit/s
+	RX bitrate: 241.80 kbit/s
+	Mean Delay: 28.91 ms
+	Packet Loss Ratio: 0.00 %
+********** 2nd_Study_NrOfSenders=3_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.4/49153 --> 10.0.0.1/9)
+	TX bitrate: 7059.50 kbit/s
+	RX bitrate: 7059.67 kbit/s
+	Mean Delay: 9.48 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 2 (TCP 10.0.0.1/9 --> 10.0.0.4/49153)
+	TX bitrate: 160.51 kbit/s
+	RX bitrate: 160.45 kbit/s
+	Mean Delay: 144.51 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 3 (TCP 10.0.0.3/49153 --> 10.0.0.1/9)
+	TX bitrate: 7041.96 kbit/s
+	RX bitrate: 7042.00 kbit/s
+	Mean Delay: 9.85 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 4 (TCP 10.0.0.1/9 --> 10.0.0.3/49153)
+	TX bitrate: 160.09 kbit/s
+	RX bitrate: 160.05 kbit/s
+	Mean Delay: 144.51 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 5 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 7045.30 kbit/s
+	RX bitrate: 7048.93 kbit/s
+	Mean Delay: 8.70 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 6 (TCP 10.0.0.1/9 --> 10.0.0.2/49153)
+	TX bitrate: 160.09 kbit/s
+	RX bitrate: 160.21 kbit/s
+	Mean Delay: 145.92 ms
+	Packet Loss Ratio: 0.00 %
+********** 2nd_Study_NrOfSenders=4_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 5537.26 kbit/s
+	RX bitrate: 5537.31 kbit/s
+	Mean Delay: 6.62 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 2 (TCP 10.0.0.1/9 --> 10.0.0.2/49153)
+	TX bitrate: 125.59 kbit/s
+	RX bitrate: 125.59 kbit/s
+	Mean Delay: 191.02 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 3 (TCP 10.0.0.4/49153 --> 10.0.0.1/9)
+	TX bitrate: 5442.66 kbit/s
+	RX bitrate: 5443.05 kbit/s
+	Mean Delay: 5.58 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 4 (TCP 10.0.0.1/9 --> 10.0.0.4/49153)
+	TX bitrate: 123.44 kbit/s
+	RX bitrate: 123.40 kbit/s
+	Mean Delay: 194.59 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 5 (TCP 10.0.0.5/49153 --> 10.0.0.1/9)
+	TX bitrate: 5253.16 kbit/s
+	RX bitrate: 5253.90 kbit/s
+	Mean Delay: 4.95 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 6 (TCP 10.0.0.1/9 --> 10.0.0.5/49153)
+	TX bitrate: 119.04 kbit/s
+	RX bitrate: 119.06 kbit/s
+	Mean Delay: 199.21 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 7 (TCP 10.0.0.3/49153 --> 10.0.0.1/9)
+	TX bitrate: 5309.87 kbit/s
+	RX bitrate: 5318.96 kbit/s
+	Mean Delay: 4.35 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 8 (TCP 10.0.0.1/9 --> 10.0.0.3/49153)
+	TX bitrate: 120.78 kbit/s
+	RX bitrate: 121.13 kbit/s
+	Mean Delay: 199.64 ms
+	Packet Loss Ratio: 0.00 %
+********** 2nd_Study_NrOfSenders=5_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 4419.89 kbit/s
+	RX bitrate: 4420.59 kbit/s
+	Mean Delay: 4.73 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 2 (TCP 10.0.0.1/9 --> 10.0.0.2/49153)
+	TX bitrate: 100.37 kbit/s
+	RX bitrate: 100.36 kbit/s
+	Mean Delay: 242.31 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 3 (TCP 10.0.0.5/49153 --> 10.0.0.1/9)
+	TX bitrate: 4345.37 kbit/s
+	RX bitrate: 4345.76 kbit/s
+	Mean Delay: 3.89 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 4 (TCP 10.0.0.1/9 --> 10.0.0.5/49153)
+	TX bitrate: 98.28 kbit/s
+	RX bitrate: 98.27 kbit/s
+	Mean Delay: 245.39 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 5 (TCP 10.0.0.6/49153 --> 10.0.0.1/9)
+	TX bitrate: 4373.13 kbit/s
+	RX bitrate: 4373.86 kbit/s
+	Mean Delay: 4.21 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 6 (TCP 10.0.0.1/9 --> 10.0.0.6/49153)
+	TX bitrate: 99.30 kbit/s
+	RX bitrate: 99.29 kbit/s
+	Mean Delay: 245.03 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 7 (TCP 10.0.0.4/49153 --> 10.0.0.1/9)
+	TX bitrate: 4305.67 kbit/s
+	RX bitrate: 4312.78 kbit/s
+	Mean Delay: 3.04 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 8 (TCP 10.0.0.1/9 --> 10.0.0.4/49153)
+	TX bitrate: 97.92 kbit/s
+	RX bitrate: 98.16 kbit/s
+	Mean Delay: 249.06 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 9 (TCP 10.0.0.3/49153 --> 10.0.0.1/9)
+	TX bitrate: 4178.62 kbit/s
+	RX bitrate: 4189.45 kbit/s
+	Mean Delay: 3.96 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 10 (TCP 10.0.0.1/9 --> 10.0.0.3/49153)
+	TX bitrate: 95.12 kbit/s
+	RX bitrate: 96.47 kbit/s
+	Mean Delay: 251.27 ms
+	Packet Loss Ratio: 0.00 %
+********** 2nd_Study_NrOfSenders=6_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.4/49153 --> 10.0.0.1/9)
+	TX bitrate: 3833.34 kbit/s
+	RX bitrate: 3833.82 kbit/s
+	Mean Delay: 5.77 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 2 (TCP 10.0.0.1/9 --> 10.0.0.4/49153)
+	TX bitrate: 86.56 kbit/s
+	RX bitrate: 86.55 kbit/s
+	Mean Delay: 280.67 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 3 (TCP 10.0.0.6/49153 --> 10.0.0.1/9)
+	TX bitrate: 3635.98 kbit/s
+	RX bitrate: 3636.22 kbit/s
+	Mean Delay: 2.78 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 4 (TCP 10.0.0.1/9 --> 10.0.0.6/49153)
+	TX bitrate: 82.01 kbit/s
+	RX bitrate: 82.00 kbit/s
+	Mean Delay: 293.90 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 5 (TCP 10.0.0.3/49153 --> 10.0.0.1/9)
+	TX bitrate: 3671.23 kbit/s
+	RX bitrate: 3671.88 kbit/s
+	Mean Delay: 3.33 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 6 (TCP 10.0.0.1/9 --> 10.0.0.3/49153)
+	TX bitrate: 83.22 kbit/s
+	RX bitrate: 83.21 kbit/s
+	Mean Delay: 292.89 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 7 (TCP 10.0.0.7/49153 --> 10.0.0.1/9)
+	TX bitrate: 3663.60 kbit/s
+	RX bitrate: 3668.06 kbit/s
+	Mean Delay: 3.80 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 8 (TCP 10.0.0.1/9 --> 10.0.0.7/49153)
+	TX bitrate: 83.27 kbit/s
+	RX bitrate: 83.31 kbit/s
+	Mean Delay: 293.49 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 9 (TCP 10.0.0.5/49153 --> 10.0.0.1/9)
+	TX bitrate: 3565.70 kbit/s
+	RX bitrate: 3575.45 kbit/s
+	Mean Delay: 3.35 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 10 (TCP 10.0.0.1/9 --> 10.0.0.5/49153)
+	TX bitrate: 81.16 kbit/s
+	RX bitrate: 81.54 kbit/s
+	Mean Delay: 298.92 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 11 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 3290.94 kbit/s
+	RX bitrate: 3486.45 kbit/s
+	Mean Delay: 3.24 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 12 (TCP 10.0.0.1/9 --> 10.0.0.2/49153)
+	TX bitrate: 79.80 kbit/s
+	RX bitrate: 80.46 kbit/s
+	Mean Delay: 303.08 ms
+	Packet Loss Ratio: 0.00 %
+********** 2nd_Study_NrOfSenders=7_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.5/49153 --> 10.0.0.1/9)
+	TX bitrate: 3299.66 kbit/s
+	RX bitrate: 3300.07 kbit/s
+	Mean Delay: 6.93 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 2 (TCP 10.0.0.1/9 --> 10.0.0.5/49153)
+	TX bitrate: 74.72 kbit/s
+	RX bitrate: 74.72 kbit/s
+	Mean Delay: 326.00 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 3 (TCP 10.0.0.7/49153 --> 10.0.0.1/9)
+	TX bitrate: 3059.33 kbit/s
+	RX bitrate: 3059.66 kbit/s
+	Mean Delay: 3.06 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 4 (TCP 10.0.0.1/9 --> 10.0.0.7/49153)
+	TX bitrate: 69.45 kbit/s
+	RX bitrate: 70.47 kbit/s
+	Mean Delay: 348.04 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 5 (TCP 10.0.0.6/49153 --> 10.0.0.1/9)
+	TX bitrate: 3183.72 kbit/s
+	RX bitrate: 3184.28 kbit/s
+	Mean Delay: 3.49 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 6 (TCP 10.0.0.1/9 --> 10.0.0.6/49153)
+	TX bitrate: 71.67 kbit/s
+	RX bitrate: 71.66 kbit/s
+	Mean Delay: 338.88 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 7 (TCP 10.0.0.8/49153 --> 10.0.0.1/9)
+	TX bitrate: 3134.98 kbit/s
+	RX bitrate: 3137.33 kbit/s
+	Mean Delay: 3.73 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 8 (TCP 10.0.0.1/9 --> 10.0.0.8/49153)
+	TX bitrate: 71.21 kbit/s
+	RX bitrate: 71.24 kbit/s
+	Mean Delay: 344.14 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 9 (TCP 10.0.0.4/49153 --> 10.0.0.1/9)
+	TX bitrate: 3070.32 kbit/s
+	RX bitrate: 3074.93 kbit/s
+	Mean Delay: 3.16 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 10 (TCP 10.0.0.1/9 --> 10.0.0.4/49153)
+	TX bitrate: 69.79 kbit/s
+	RX bitrate: 69.95 kbit/s
+	Mean Delay: 349.61 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 11 (TCP 10.0.0.3/49153 --> 10.0.0.1/9)
+	TX bitrate: 2908.38 kbit/s
+	RX bitrate: 2972.27 kbit/s
+	Mean Delay: 3.20 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 12 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 2994.66 kbit/s
+	RX bitrate: 3005.39 kbit/s
+	Mean Delay: 3.14 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 13 (TCP 10.0.0.1/9 --> 10.0.0.2/49153)
+	TX bitrate: 68.77 kbit/s
+	RX bitrate: 69.24 kbit/s
+	Mean Delay: 352.73 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 14 (TCP 10.0.0.1/9 --> 10.0.0.3/49153)
+	TX bitrate: 68.01 kbit/s
+	RX bitrate: 68.80 kbit/s
+	Mean Delay: 353.96 ms
+	Packet Loss Ratio: 0.00 %
+********** 2nd_Study_NrOfSenders=8_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 2944.33 kbit/s
+	RX bitrate: 2944.55 kbit/s
+	Mean Delay: 7.56 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 2 (TCP 10.0.0.1/9 --> 10.0.0.2/49153)
+	TX bitrate: 66.56 kbit/s
+	RX bitrate: 66.55 kbit/s
+	Mean Delay: 366.43 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 3 (TCP 10.0.0.8/49153 --> 10.0.0.1/9)
+	TX bitrate: 2764.92 kbit/s
+	RX bitrate: 2765.24 kbit/s
+	Mean Delay: 3.63 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 4 (TCP 10.0.0.1/9 --> 10.0.0.8/49153)
+	TX bitrate: 62.44 kbit/s
+	RX bitrate: 62.44 kbit/s
+	Mean Delay: 391.51 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 5 (TCP 10.0.0.5/49153 --> 10.0.0.1/9)
+	TX bitrate: 2545.40 kbit/s
+	RX bitrate: 2599.95 kbit/s
+	Mean Delay: 2.84 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 6 (TCP 10.0.0.4/49153 --> 10.0.0.1/9)
+	TX bitrate: 2734.04 kbit/s
+	RX bitrate: 2736.24 kbit/s
+	Mean Delay: 3.00 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 7 (TCP 10.0.0.1/9 --> 10.0.0.4/49153)
+	TX bitrate: 62.10 kbit/s
+	RX bitrate: 62.13 kbit/s
+	Mean Delay: 396.37 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 8 (TCP 10.0.0.3/49153 --> 10.0.0.1/9)
+	TX bitrate: 2700.03 kbit/s
+	RX bitrate: 2703.00 kbit/s
+	Mean Delay: 2.55 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 9 (TCP 10.0.0.1/9 --> 10.0.0.3/49153)
+	TX bitrate: 61.34 kbit/s
+	RX bitrate: 61.38 kbit/s
+	Mean Delay: 400.26 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 10 (TCP 10.0.0.9/49153 --> 10.0.0.1/9)
+	TX bitrate: 2653.92 kbit/s
+	RX bitrate: 2656.79 kbit/s
+	Mean Delay: 2.99 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 11 (TCP 10.0.0.1/9 --> 10.0.0.9/49153)
+	TX bitrate: 60.79 kbit/s
+	RX bitrate: 60.93 kbit/s
+	Mean Delay: 402.53 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 12 (TCP 10.0.0.6/49153 --> 10.0.0.1/9)
+	TX bitrate: 2642.75 kbit/s
+	RX bitrate: 2647.99 kbit/s
+	Mean Delay: 3.35 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 13 (TCP 10.0.0.7/49153 --> 10.0.0.1/9)
+	TX bitrate: 2634.69 kbit/s
+	RX bitrate: 2642.02 kbit/s
+	Mean Delay: 3.22 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 14 (TCP 10.0.0.1/9 --> 10.0.0.6/49153)
+	TX bitrate: 61.01 kbit/s
+	RX bitrate: 61.28 kbit/s
+	Mean Delay: 404.00 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 15 (TCP 10.0.0.1/9 --> 10.0.0.7/49153)
+	TX bitrate: 60.90 kbit/s
+	RX bitrate: 61.21 kbit/s
+	Mean Delay: 404.29 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 16 (TCP 10.0.0.1/9 --> 10.0.0.5/49153)
+	TX bitrate: 59.48 kbit/s
+	RX bitrate: 60.00 kbit/s
+	Mean Delay: 405.78 ms
+	Packet Loss Ratio: 0.00 %
+********** 2nd_Study_NrOfSenders=9_Duration=60s_Run=1.xml **********
+Reading XML file  . done.
+FlowID: 1 (TCP 10.0.0.9/49153 --> 10.0.0.1/9)
+	TX bitrate: 2550.40 kbit/s
+	RX bitrate: 2550.76 kbit/s
+	Mean Delay: 10.10 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 2 (TCP 10.0.0.1/9 --> 10.0.0.9/49153)
+	TX bitrate: 57.58 kbit/s
+	RX bitrate: 57.54 kbit/s
+	Mean Delay: 421.40 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 3 (TCP 10.0.0.8/49153 --> 10.0.0.1/9)
+	TX bitrate: 2424.21 kbit/s
+	RX bitrate: 2424.35 kbit/s
+	Mean Delay: 7.60 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 4 (TCP 10.0.0.1/9 --> 10.0.0.8/49153)
+	TX bitrate: 54.25 kbit/s
+	RX bitrate: 54.26 kbit/s
+	Mean Delay: 441.13 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 5 (TCP 10.0.0.3/49153 --> 10.0.0.1/9)
+	TX bitrate: 2423.13 kbit/s
+	RX bitrate: 2425.24 kbit/s
+	Mean Delay: 8.44 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 6 (TCP 10.0.0.1/9 --> 10.0.0.3/49153)
+	TX bitrate: 55.04 kbit/s
+	RX bitrate: 55.03 kbit/s
+	Mean Delay: 442.40 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 7 (TCP 10.0.0.6/49153 --> 10.0.0.1/9)
+	TX bitrate: 2150.12 kbit/s
+	RX bitrate: 2237.71 kbit/s
+	Mean Delay: 8.40 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 8 (TCP 10.0.0.7/49153 --> 10.0.0.1/9)
+	TX bitrate: 2392.95 kbit/s
+	RX bitrate: 2395.35 kbit/s
+	Mean Delay: 8.11 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 9 (TCP 10.0.0.1/9 --> 10.0.0.7/49153)
+	TX bitrate: 54.35 kbit/s
+	RX bitrate: 54.40 kbit/s
+	Mean Delay: 446.93 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 10 (TCP 10.0.0.5/49153 --> 10.0.0.1/9)
+	TX bitrate: 2337.87 kbit/s
+	RX bitrate: 2341.47 kbit/s
+	Mean Delay: 7.80 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 11 (TCP 10.0.0.1/9 --> 10.0.0.5/49153)
+	TX bitrate: 53.12 kbit/s
+	RX bitrate: 53.22 kbit/s
+	Mean Delay: 455.27 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 12 (TCP 10.0.0.2/49153 --> 10.0.0.1/9)
+	TX bitrate: 2317.53 kbit/s
+	RX bitrate: 2321.84 kbit/s
+	Mean Delay: 8.00 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 13 (TCP 10.0.0.1/9 --> 10.0.0.2/49153)
+	TX bitrate: 53.50 kbit/s
+	RX bitrate: 53.75 kbit/s
+	Mean Delay: 457.43 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 14 (TCP 10.0.0.4/49153 --> 10.0.0.1/9)
+	TX bitrate: 2218.20 kbit/s
+	RX bitrate: 2268.25 kbit/s
+	Mean Delay: 8.06 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 15 (TCP 10.0.0.10/49153 --> 10.0.0.1/9)
+	TX bitrate: 2244.24 kbit/s
+	RX bitrate: 2252.54 kbit/s
+	Mean Delay: 7.80 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 16 (TCP 10.0.0.1/9 --> 10.0.0.10/49153)
+	TX bitrate: 51.52 kbit/s
+	RX bitrate: 52.29 kbit/s
+	Mean Delay: 461.86 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 17 (TCP 10.0.0.1/9 --> 10.0.0.4/49153)
+	TX bitrate: 52.26 kbit/s
+	RX bitrate: 52.74 kbit/s
+	Mean Delay: 463.32 ms
+	Packet Loss Ratio: 0.00 %
+FlowID: 18 (TCP 10.0.0.1/9 --> 10.0.0.6/49153)
+	TX bitrate: 51.18 kbit/s
+	RX bitrate: 51.71 kbit/s
+	Mean Delay: 464.60 ms
+	Packet Loss Ratio: 0.00 %

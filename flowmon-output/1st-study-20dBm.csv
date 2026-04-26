@@ -1,0 +1,15 @@
+file,distance_m,run,flow_id,protocol,rx_kbit_s,tx_kbit_s,delay_ms,loss_pct
+1st_Study_Distance=1000m_Duration=60s_Run=1.xml,1000,1,1,TCP,7211.04,7210.51,132.83,0.0
+1st_Study_Distance=100m_Duration=60s_Run=1.xml,100,1,1,TCP,21798.42,21796.79,49.66,0.0
+1st_Study_Distance=1100m_Duration=60s_Run=1.xml,1100,1,1,TCP,3922.17,3921.89,272.08,0.0
+1st_Study_Distance=1200m_Duration=60s_Run=1.xml,1200,1,1,TCP,3837.43,3837.16,45.15,0.0
+1st_Study_Distance=1300m_Duration=60s_Run=1.xml,1300,1,1,TCP,4038.96,4038.67,71.71,0.0
+1st_Study_Distance=1400m_Duration=60s_Run=1.xml,1400,1,1,TCP,459.11,469.31,399.05,2.09
+1st_Study_Distance=200m_Duration=60s_Run=1.xml,200,1,1,TCP,16046.8,16045.61,66.93,0.0
+1st_Study_Distance=300m_Duration=60s_Run=1.xml,300,1,1,TCP,15976.86,15975.69,66.17,0.0
+1st_Study_Distance=400m_Duration=60s_Run=1.xml,400,1,1,TCP,12151.81,12150.93,72.12,0.0
+1st_Study_Distance=500m_Duration=60s_Run=1.xml,500,1,1,TCP,10164.45,10163.81,105.96,0.0
+1st_Study_Distance=600m_Duration=60s_Run=1.xml,600,1,1,TCP,10178.08,10177.34,101.99,0.0
+1st_Study_Distance=700m_Duration=60s_Run=1.xml,700,1,1,TCP,10030.65,10029.9,105.96,0.0
+1st_Study_Distance=800m_Duration=60s_Run=1.xml,800,1,1,TCP,6907.02,6906.51,126.61,0.0
+1st_Study_Distance=900m_Duration=60s_Run=1.xml,900,1,1,TCP,7336.87,7336.33,112.67,0.0

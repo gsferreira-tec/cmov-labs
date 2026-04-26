@@ -1,0 +1,5 @@
+file,distance_m,run,wireshark_kbit_s
+1st_Study_Distance=100m_Duration=60s_Run=1-0-0.pcap,100,1,15058.207614717336
+1st_Study_Distance=200m_Duration=60s_Run=1-0-0.pcap,200,1,9664.167538609036
+1st_Study_Distance=300m_Duration=60s_Run=1-0-0.pcap,300,1,7188.888825684183
+1st_Study_Distance=400m_Duration=60s_Run=1-0-0.pcap,400,1,3957.985626345944

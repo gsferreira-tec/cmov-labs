@@ -1,0 +1,5 @@
+If you run into trouble writing files in the shared folder with the host 
+system, remount the shared folder like so: 
+
+~$ sudo umount ~/Share  
+~$ sudo mount -t vboxsf -o uid=1000,gid=1000 CMOV_Shared /home/mobile/Share/
