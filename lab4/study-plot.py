@@ -50,16 +50,20 @@ def main():
         if csv2:
             df2 = df2.sort_values("distance_m")
 
+
+        plt.figure(figsize=(10,6))
+
         plt.plot(df1["distance_m"], df1["rx_kbit_s"], marker="o", linewidth=3, color="steelblue", label="flowmon")
         if csv2:
             plt.plot(df2["distance_m"], df2["wireshark_kbit_s"], marker="*", linewidth=3, color="red", label="Wireshark")
-        plt.xlabel("Distance (m)")
-        plt.ylabel("Throughput (Kbps)")
-
-        plt.savefig(out_path, dpi=200) # saving the figure
-
-        pl.tight_layout()
+        plt.xlabel("Distance (m)", fontweight="bold")
+        plt.ylabel("Throughput (Kbps)", fontweight="bold")
+        plt.grid(True, linestyle=":", alpha=0.6)
         plt.legend()
+
+        plt.savefig(out_path, dpi=200, bbox_inches='tight') # saving the figure
+
+        plt.tight_layout()
         plt.show()
 
     elif study_nr == 2:
@@ -79,7 +83,7 @@ def main():
 
         # plotting total throughput per increase in number of STA
         color_total = 'steelblue'
-        ax1.set_xlabel('Number of STAs')
+        ax1.set_xlabel('Number of STAs', fontweight="bold")
         ax1.set_ylabel('Total Throughput (Kbps)', color=color_total, fontsize=12, fontweight='bold')
         ax1.plot(df1["sender_nr"], df1["total_throughput"], color=color_total, marker='o', linewidth=3, label="Total Throughput")
         ax1.tick_params(axis='y', labelcolor=color_total)
@@ -101,10 +105,9 @@ def main():
         lines2, labels2 = ax2.get_legend_handles_labels()
         ax1.legend(lines1 + lines2, labels1 + labels2, loc='upper right')
 
-        plt.savefig(out_path, dpi=200) # saving the figure
+        plt.savefig(out_path, dpi=200, bbox_inches='tight') # saving the figure
 
-        pl.tight_layout()
-        plt.legend()
+        plt.tight_layout()
         plt.show()
 
     elif study_nr == 3:
@@ -114,7 +117,6 @@ def main():
 
         out_path_2 = Path("./3rd-study-mean.png")
         out_path_3 = Path("./3rd-study-pktloss.png")
-
 
         df1["udp_birate"] = pd.to_numeric(df1["file"].str.extract(r"UDP_DataRate=(\d+)", expand=False), errors="coerce")
         df1["rx_kbit_s"] = pd.to_numeric(df1["rx_kbit_s"], errors="coerce")
@@ -133,12 +135,11 @@ def main():
         plt.xlabel("Transmitted UDP Bitrate (Mbps)", fontweight="bold")
         plt.ylabel("Mean Delay (ms)", fontweight="bold")
         plt.grid(True, linestyle=":", alpha=0.6)
+        plt.legend()
 
-        plt.savefig(out_path_2, dpi=200) # saving the figure
+        plt.savefig(out_path_2, dpi=200, bbox_inches='tight') # saving the figure
 
         plt.tight_layout()
-        plt.legend()
-        # plt.show()
 
         # plotting the packet loss
         plt.figure(figsize=(10,6))
@@ -147,12 +148,11 @@ def main():
         plt.xlabel("Transmitted UDP Bitrate (Mbps)", fontweight="bold")
         plt.ylabel("Packet Loss Ratio (%)", fontweight="bold")
         plt.grid(True, linestyle=":", alpha=0.6)
+        plt.legend()
 
-        plt.savefig(out_path_3, dpi=200) # saving the figure
+        plt.savefig(out_path_3, dpi=200, bbox_inches='tight') # saving the figure
 
         plt.tight_layout()
-        plt.legend()
-        # plt.show()
 
         # plotting the UDP vs TCP throughput with varying bitrates
         plt.figure(figsize=(10,6))
@@ -162,11 +162,12 @@ def main():
         plt.xlabel("Transmitted UDP Bitrate (Mbps)", fontweight="bold")
         plt.ylabel("Throughput (Kbps)", fontweight="bold")
         plt.grid(True, linestyle=":", alpha=0.6)
+        plt.legend()
 
-        plt.savefig(out_path, dpi=200) # saving the figure
+        plt.savefig(out_path, dpi=200, bbox_inches='tight') # saving the figure
+
 
         plt.tight_layout()
-        plt.legend()
         plt.show()
 
     elif study_nr == 4:
@@ -190,6 +191,8 @@ def main():
 
         df1 = df1.sort_values("distance_m")
 
+        plt.figure(figsize=(10,6))
+
         if csv2:
             df2 = df2.sort_values("distance_m")
 
@@ -197,14 +200,14 @@ def main():
         if csv2:
             plt.plot(df2["distance_m"], df2["rx_kbit_s"], marker="*", linewidth=3, color="red", label="without RELAY")
 
-        plt.xlabel("Distance (m)")
-        plt.ylabel("Throughput (Kbps)")
-
-
-        plt.savefig(out_path, dpi=200) # saving the figure
-
-        pl.tight_layout()
+        plt.xlabel("Distance (m)", fontweight="bold")
+        plt.ylabel("Throughput (Kbps)", fontweight="bold")
+        plt.grid(True, linestyle=":", alpha=0.6)
         plt.legend()
+
+        plt.savefig(out_path, dpi=200, bbox_inches='tight') # saving the figure
+
+        plt.tight_layout()
         plt.show()
 
 
