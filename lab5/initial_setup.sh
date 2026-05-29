@@ -11,13 +11,16 @@ CONF_PATH=~/oai/targets/PROJECTS/GENERIC-NR-5GC/CONF/gnb.sa.band78.fr1.106PRB.us
 
 if [ "$1" == "gnb" ]; then
 	sudo ip route add $IP_DOCKER_CORE_SUBNET via $IP_HOST_CORE dev eno1
+	sudo iptables -t raw -F
+	sudo iptables -t filter -F
 	sudo sysctl net.ipv4.conf.all.forwarding=1
-	sudo iptables -P FORWARD ACCEPT
+        sudo iptables -P FORWARD ACCEPT
+	sudo iptables-save 
 	sudo sed -i "s|192.168.70.129/24|${IP_HOST_GNB}/32|g" "$CONF_PATH"
 	echo "[*] Pinging AMF"
 	ping -c 2 $IP_AMF
 	echo "[*] Pinging External DN"
-	ping -c 2 $IP_EXT_DN$
+	ping -c 2 $IP_EXT_DN
 elif [ "$1" == "core" ]; then 
 	sudo iptables -t raw -F
 	sudo iptables -t filter -F
