@@ -25,7 +25,7 @@ elif [ "$1" == "core" ]; then
 	sudo iptables -t raw -F
 	sudo iptables -t filter -F
 	sudo sysctl net.ipv4.conf.all.forwarding=1
-        sudo iptables -P FORWARD ACCEPT
+    sudo iptables -P FORWARD ACCEPT
 	sudo iptables-save 
 else 
 	echo "Usage: ./$0 <gnb/core>"

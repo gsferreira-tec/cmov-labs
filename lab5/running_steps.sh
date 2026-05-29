@@ -14,9 +14,11 @@ FILE_PATH="/tmp/"
 CONF_PATH=~/oai/targets/PROJECTS/GENERIC-NR-5GC/CONF/gnb.sa.band78.fr1.106PRB.usrpb210.conf
 CONF_PATH_TMP=/tmp/gnb_task3.conf
 
+# Killing previous Task 1 occurences
 tmux kill-session -t gnb 2>/dev/null
 tmux kill-session -t ue 2>/dev/null
 
+# Killing previous Task 2 occurences
 tmux kill-session -t ue1 2>/dev/null
 tmux kill-session -t ue2 2>/dev/null
 
@@ -45,12 +47,11 @@ if [ "$1" == "gnb" ]; then
 		#echo "[*] Bringing up oai-nr-ue1"
 		#docker compose -f docker-compose.yaml up -d oai-nr-ue1
 
+		sleep 10
 
-		sleep 15 # Giving time for UE to start
+        IP_UE=$(ip addr show oaitun_ue1 | grep "inet " | awk '{print $2}' | cut -d/ -f1)
 
-
-                IP_UE=$(ip addr show oaitun_ue1 | grep "inet " | awk '{print $2}' | cut -d/ -f1)
-
+		
 
 		echo "[*] Pinging Uplink 10 times"
 		ping -c 10 $IP_EXT_DN -I oaitun_ue1 
@@ -58,7 +59,9 @@ if [ "$1" == "gnb" ]; then
 		sleep 5
 
 		echo "[*] Pinging Downlink 10 times"
-		ssh mobile@${IP_CORE} "sudo docker exec -it oai-ext-dn ping -c 10 $IP_UE" 
+		ssh -t mobile@${IP_HOST_CORE} "sudo docker exec oai-ext-dn ping -c 10 $IP_UE"
+		#sshpass -p 'mobile' ssh -o StrictHostKeyChecking=no mobile@${IP_HOST_CORE} "sudo docker exec oai-ext-dn ping -c 10 $IP_UE" # To instantly pass the password login
+
 		
 
 	########################
@@ -80,32 +83,32 @@ if [ "$1" == "gnb" ]; then
 		tmux new-session -d -s ue2 \
 		    "sudo ip netns exec ue2 ./nr-uesoftmodem -r 106 --numerology 1 --band 78 -C 3619200000 --rfsim --sa --uicc0.imsi 001010000000002 --rfsimulator.serveraddr 10.202.1.100 --telnetsrv --telnetsrv.listenport 9096"
 
-		sleep 20 # Giving time for UEs to start
-
-		# Getting IPs inside the namespaces
-		IP_UE1=$(sudo ip netns exec ue1 ip addr show oaitun_ue1 | grep "inet " | awk '{print $2}' | cut -d/ -f1)
-		IP_UE2=$(sudo ip netns exec ue2 ip addr show oaitun_ue1 | grep "inet " | awk '{print $2}' | cut -d/ -f1)
-
-		echo "IP of UE1: $IP_UE1"
-		echo "IP of UE2: $IP_UE2"
+		sleep 15 # Giving time for UEs to start		
 
 		echo "[*] Pinging Uplink 10 times from UE1"
 		sudo ip netns exec ue1 ping -c 10 $IP_EXT_DN -I oaitun_ue1
 
 		echo "[*] Pinging Uplink 10 times from UE2"
+		# sudo ip netns exec ue2 ping -c 10 $IP_EXT_DN -I oaitun_ue2
 		sudo ip netns exec ue2 ping -c 10 $IP_EXT_DN -I oaitun_ue1
+
+		IP_UE1=$(sudo ip netns exec ue1 ip addr show oaitun_ue1 | grep "inet " | awk '{print $2}' | cut -d/ -f1)
+		# IP_UE2=$(sudo ip netns exec ue2 ip addr show oaitun_ue2 | grep "inet " | awk '{print $2}' | cut -d/ -f1)
+		IP_UE2=$(sudo ip netns exec ue2 ip addr show oaitun_ue1 | grep "inet " | awk '{print $2}' | cut -d/ -f1)
+
+		echo "IP of UE1: $IP_UE1"
+		echo "IP of UE2: $IP_UE2"
 
 		sleep 5
 
 		echo "[*] Pinging Downlink 10 times to UE1"
-		ssh -s mobile@${IP_HOST_CORE} "sudo docker exec  oai-ext-dn ping -c 10 $IP_UE1"
+		ssh -t mobile@${IP_HOST_CORE} "sudo docker exec oai-ext-dn ping -c 10 $IP_UE1"
+		#sshpass -p 'mobile' ssh -o StrictHostKeyChecking=no mobile@${IP_HOST_CORE} "sudo docker exec oai-ext-dn ping -c 10 $IP_UE1" 
+
 
 		echo "[*] Pinging Downlink 10 times to UE2"
-		ssh -s mobile@${IP_HOST_CORE} "sudo docker exec  oai-ext-dn ping -c 10 $IP_UE2"
-
-	#	echo "[*] Stopping the UEs"
-	#	docker compose stop oai-nr-ue{1,2}
-	#	docker compose down -v
+		ssh -t mobile@${IP_HOST_CORE} "sudo docker exec oai-ext-dn ping -c 10 $IP_UE2"
+		#sshpass -p 'mobile' ssh -o StrictHostKeyChecking=no mobile@${IP_HOST_CORE} "sudo docker exec oai-ext-dn ping -c 10 $IP_UE2"
 
 	########################
 	#        TASK 3        #
@@ -163,8 +166,7 @@ elif [ "$1" == "core" ]; then
 		sudo rm ${FILE_PATH}dl-ul-pings-task1.pcap
 
 		echo "[*] Listening for ${IP_EXT_DN} IP for Task 1 communicatin with one UE"
-		# Change this line in your core section:
-		sudo timeout 60 tcpdump -i any "udp port 2152 or host ${IP_EXT_DN}" -U -w ${FILE_PATH}dl-ul-pings-task1.pcap
+		sudo timeout 120 tcpdump -i any "udp port 2152 or host ${IP_EXT_DN}" -U -w ${FILE_PATH}dl-ul-pings-task1.pcap
 
 
 	########################
@@ -174,7 +176,7 @@ elif [ "$1" == "core" ]; then
 		sudo rm ${FILE_PATH}dl-ul-pings-task2.pcap
 
 		echo "[*] Listening for ${IP_EXT_DN} IP for Task 2 communicatin with UE1 and then UE2"
-		sudo timeout 60 tcpdump -i any "udp port 2152 or host ${IP_EXT_DN}" -U -w ${FILE_PATH}dl-ul-pings-task2.pcap
+		sudo timeout 180 tcpdump -i any "udp port 2152 or host ${IP_EXT_DN}" -U -w ${FILE_PATH}dl-ul-pings-task2.pcap
 	
 	
 
