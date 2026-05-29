@@ -30,7 +30,7 @@ if [ "$1" == "gnb" ]; then
 	tmux new-session -d -s gnb \
 	"sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/gnb.sa.band78.fr1.106PRB.usrpb210.conf --gNBs.[0].min_rxtxtime 6 --rfsim --sa"
 
-	sleep 15
+	sleep 10
 
 	########################
 	#        TASK 1        #
@@ -49,12 +49,12 @@ if [ "$1" == "gnb" ]; then
 
 		sleep 10
 
-        IP_UE=$(ip addr show oaitun_ue1 | grep "inet " | awk '{print $2}' | cut -d/ -f1)
-
-		
-
 		echo "[*] Pinging Uplink 10 times"
 		ping -c 10 $IP_EXT_DN -I oaitun_ue1 
+
+		IP_UE=$(ip addr show oaitun_ue1 | grep "inet " | awk '{print $2}' | cut -d/ -f1)
+
+		echo "IP of UE1: $IP_UE"
 
 		sleep 5
 
@@ -83,18 +83,16 @@ if [ "$1" == "gnb" ]; then
 		tmux new-session -d -s ue2 \
 		    "sudo ip netns exec ue2 ./nr-uesoftmodem -r 106 --numerology 1 --band 78 -C 3619200000 --rfsim --sa --uicc0.imsi 001010000000002 --rfsimulator.serveraddr 10.202.1.100 --telnetsrv --telnetsrv.listenport 9096"
 
-		sleep 15 # Giving time for UEs to start		
+		sleep 10 # Giving time for UEs to start		
 
 		echo "[*] Pinging Uplink 10 times from UE1"
-		sudo ip netns exec ue1 ping -c 10 $IP_EXT_DN -I oaitun_ue1
+		sudo ip netns exec ue1 ping -c 10 $IP_EXT_DN -I oaitun_ue1 
 
 		echo "[*] Pinging Uplink 10 times from UE2"
-		# sudo ip netns exec ue2 ping -c 10 $IP_EXT_DN -I oaitun_ue2
-		sudo ip netns exec ue2 ping -c 10 $IP_EXT_DN -I oaitun_ue1
+		sudo ip netns exec ue2 ping -c 10 $IP_EXT_DN -I oaitun_ue1 # UE2 gets associated still to "oaitun_ue1"
 
 		IP_UE1=$(sudo ip netns exec ue1 ip addr show oaitun_ue1 | grep "inet " | awk '{print $2}' | cut -d/ -f1)
-		# IP_UE2=$(sudo ip netns exec ue2 ip addr show oaitun_ue2 | grep "inet " | awk '{print $2}' | cut -d/ -f1)
-		IP_UE2=$(sudo ip netns exec ue2 ip addr show oaitun_ue1 | grep "inet " | awk '{print $2}' | cut -d/ -f1)
+		IP_UE2=$(sudo ip netns exec ue2 ip addr show oaitun_ue1 | grep "inet " | awk '{print $2}' | cut -d/ -f1) # UE2 gets associated still to "oaitun_ue1"
 
 		echo "IP of UE1: $IP_UE1"
 		echo "IP of UE2: $IP_UE2"
