@@ -1,13 +1,12 @@
 #!/bin/bash 
 
-IP_HOST_CORE="10.227.20.82"
+IP_HOST_CORE="10.227.20.22"
 
-IP_HOST_GNB="10.227.20.72"
+IP_HOST_GNB="10.227.20.12"
 
 IP_DOCKER_CORE_SUBNET="192.168.70.128/26"
 IP_AMF="192.168.70.132"
 IP_EXT_DN="192.168.70.135"
-IP_UE="10.0.0.3"
 
 FILE_PATH="/tmp/"
 
@@ -22,6 +21,7 @@ tmux kill-session -t ue 2>/dev/null
 tmux kill-session -t ue1 2>/dev/null
 tmux kill-session -t ue2 2>/dev/null
 
+tmux kill-session -t iperf 2>/dev/null
 
 if [ "$1" == "gnb" ]; then 
 
@@ -229,6 +229,8 @@ if [ "$1" == "gnb" ]; then
 			#tmux new-session -d -s ue \
 			#	"sudo ./nr-uesoftmodem -r 106 --numerology 1 --band 78 -C 3450720000 --rfsim --sa --uicc0.imsi 001010000000001 --rfsimulator.serveraddr 127.0.0.1"
 
+			BW="100"
+
 			tmux new-session -d -s ue1 \
 		   		"sudo ip netns exec ue1 ./nr-uesoftmodem -r 106 --numerology 1 --band 78 -C 3450720000 --rfsim --sa --uicc0.imsi 001010000000001 --rfsimulator.serveraddr 10.201.1.100 --telnetsrv --telnetsrv.listenport 9095"
 
@@ -236,8 +238,11 @@ if [ "$1" == "gnb" ]; then
 		    	"sudo ip netns exec ue2 ./nr-uesoftmodem -r 106 --numerology 1 --band 78 -C 3450720000 --rfsim --sa --uicc0.imsi 001010000000002 --rfsimulator.serveraddr 10.202.1.100 --telnetsrv --telnetsrv.listenport 9096"
 
 		elif [ "$3" == "20" ]; then
+
 			echo "20MHz bandwidth doesn't work"
 			exit 1
+
+			BW="20"
 			#tmux new-session -d -s ue \
 			#	"sudo ./nr-uesoftmodem -r 51 --numerology 1 --band 78 -C 3450720000 --rfsim --sa --uicc0.imsi 001010000000001 --rfsimulator.serveraddr 127.0.0.1" # Adjusted to 3450.72 MHz
 		fi
@@ -245,13 +250,13 @@ if [ "$1" == "gnb" ]; then
 		echo "Run 'tmux attach -t ue1'"
 		echo "Run 'tmux attach -t ue2'"
 
-		sleep 10
+		sleep 15
 
 		echo "[*] Pinging Uplink 10 times from UE1"
-		sudo ip netns exec ue1 ping -c 10 $IP_EXT_DN -I oaitun_ue1 
+		sudo ip netns exec ue1 ping -c 60 $IP_EXT_DN -I oaitun_ue1 | tee ~/rtt_ul_ue1_${BW}.txt
 
 		echo "[*] Pinging Uplink 10 times from UE2"
-		sudo ip netns exec ue2 ping -c 10 $IP_EXT_DN -I oaitun_ue1 # UE2 gets associated still to "oaitun_ue1"
+		sudo ip netns exec ue2 ping -c 60 $IP_EXT_DN -I oaitun_ue1 | tee ~/rtt_ul_ue2_${BW}.txt # UE2 gets associated still to "oaitun_ue1"
 
 		IP_UE1=$(sudo ip netns exec ue1 ip addr show oaitun_ue1 | grep "inet " | awk '{print $2}' | cut -d/ -f1)
 		IP_UE2=$(sudo ip netns exec ue2 ip addr show oaitun_ue1 | grep "inet " | awk '{print $2}' | cut -d/ -f1) # UE2 gets associated still to "oaitun_ue1"
@@ -262,10 +267,10 @@ if [ "$1" == "gnb" ]; then
 		sleep 5
 
 		echo "[*] Pinging Downlink 10 times to UE1"
-		ssh -t mobile@${IP_HOST_CORE} "sudo docker exec oai-ext-dn ping -c 10 $IP_UE1"
+		ssh -t mobile@${IP_HOST_CORE} "sudo docker exec oai-ext-dn ping -c 60 $IP_UE1" | tee ~/rtt_dl_ue1_${BW}.txt
 
 		echo "[*] Pinging Downlink 10 times to UE2"
-		ssh -t mobile@${IP_HOST_CORE} "sudo docker exec oai-ext-dn ping -c 10 $IP_UE2"
+		ssh -t mobile@${IP_HOST_CORE} "sudo docker exec oai-ext-dn ping -c 60 $IP_UE2" | tee ~/rtt_dl_ue2_${BW}.txt
 
 
 		echo "+----------------------+"
@@ -302,25 +307,22 @@ if [ "$1" == "gnb" ]; then
 
 			sleep 10
 			
-			echo "[*] Starting iPerf UDP Client for 100 seconds"
+			echo "[*] Starting iPerf UDP Client for 60 seconds"
 
 			BITRATE="10M" # 10Mbits per second
-			TIME="10" # in seconds
+			TIME="60" # in seconds
 
-			ssh -t mobile@${IP_HOST_CORE} "sudo docker exec -it oai-ext-dn iperf -u -t $TIME -i 1 -fk -B $IP_EXT_DN -b $BITRATE -c $CURRENT_IP_UE"
-
-
+			ssh -t mobile@${IP_HOST_CORE} "sudo docker exec -it oai-ext-dn iperf -y C -u -t $TIME -i 1 -fk -B $IP_EXT_DN -b $BITRATE -c $CURRENT_IP_UE" | tee ~/throughput_udp_dl_${NS}_${BW}.csv
 
 			echo "[*] Preparing iPerf UDP Uplink for throughput"
 
-			echo "[*] Starting iPerf Server for 100 seconds"
-			ssh -t mobile@${IP_HOST_CORE} "sudo docker exec -d oai-ext-dn iperf -s -u -i 1 -fk -B $IP_EXT_DN"
+			echo "[*] Starting iPerf Server for 60 seconds"
+			ssh -t mobile@${IP_HOST_CORE} "sudo docker exec -d oai-ext-dn iperf -s -u -i 1 -fk -B $IP_EXT_DN" 
 
 			sleep 10
 
-
 			echo "[*] Starting iPerf UDP Client"
-			iperf -u -t 10 -i 1 -fk -b $BITRATE -B $CURRENT_IP_UE -c $IP_EXT_DN	
+			sudo ip netns exec $NS iperf -y C -u -t $TIME -i 1 -fk -b $BITRATE -B $CURRENT_IP_UE -c $IP_EXT_DN	| tee ~/throughput_udp_ul_${NS}_${BW}.csv
 
 
 			echo -en "\n\n\n"
@@ -334,6 +336,8 @@ if [ "$1" == "gnb" ]; then
 
 			tmux kill-session -t iperf 2>/dev/null
 
+			echo "[*] Preparing iPerf TCP Downlink for throughput"
+
 			echo "[*] Starting iPerf Server"
 			tmux new-session -d -s iperf \
 				"sudo ip netns exec $NS iperf -s -i 1 -B $CURRENT_IP_UE" 
@@ -342,25 +346,25 @@ if [ "$1" == "gnb" ]; then
 
 			sleep 10
 
-			echo "[*] Starting iPerf TCP Client for 100 seconds"
+			echo "[*] Starting iPerf TCP Client for 60 seconds"
 
 			BITRATE="10M" # 10Mbits per second
 
-			ssh -t mobile@${IP_HOST_CORE} "sudo docker exec -it oai-ext-dn iperf -t $TIME -i 1 -fk -B $IP_EXT_DN -c $CURRENT_IP_UE"
+			ssh -t mobile@${IP_HOST_CORE} "sudo docker exec -it oai-ext-dn iperf -y C -t $TIME -i 1 -fk -B $IP_EXT_DN -c $CURRENT_IP_UE" | tee ~/throughput_tcp_dl_${NS}_${BW}.csv
 
 			echo -en "\n\n\n"
 
 
 			echo "[*] Preparing iPerf TCP Uplink for throughput"
 
-			echo "[*] Starting iPerf Server for 100 seconds"
-			ssh -t mobile@${IP_HOST_CORE} "sudo docker exec -d oai-ext-dn iperf -s -i 1 -fk -B $IP_EXT_DN"
+			echo "[*] Starting iPerf Server for 60 seconds"
+			ssh -t mobile@${IP_HOST_CORE} "sudo docker exec -d oai-ext-dn iperf -s -i 1 -fk -B $IP_EXT_DN" 
 
 			sleep 10
 
 
 			echo "[*] Starting iPerf TCP Client"
-			iperf -t $TIME -i 1 -fk -B $CURRENT_IP_UE -c $IP_EXT_DN	
+			sudo ip netns exec $NS iperf -y C -t $TIME -i 1 -fk -B $CURRENT_IP_UE -c $IP_EXT_DN | tee ~/throughput_tcp_ul_${NS}_${BW}.csv
 			
 
 			echo -en "\n\n\n"
