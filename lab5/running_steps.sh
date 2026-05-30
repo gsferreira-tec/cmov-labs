@@ -43,6 +43,7 @@ if [ "$1" == "gnb" ]; then
 		tmux new-session -d -s gnb \
 			"sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/gnb.sa.band78.fr1.106PRB.usrpb210.conf --gNBs.[0].min_rxtxtime 6 --rfsim --sa"
 
+		echo "Run 'tmux attach -t gnb'"
 		sleep 10
 
 		echo "[*] Starting UE"
@@ -50,6 +51,7 @@ if [ "$1" == "gnb" ]; then
 		tmux new-session -d -s ue \
 	        "sudo ./nr-uesoftmodem -r 106 --numerology 1 --band 78 -C 3619200000 --rfsim --sa --uicc0.imsi 001010000000001 --rfsimulator.serveraddr 127.0.0.1"
 
+		echo "Run 'tmux attach -t ue'"
 		sleep 10
 
 		echo "[*] Pinging Uplink 10 times"
@@ -79,6 +81,8 @@ if [ "$1" == "gnb" ]; then
 		tmux new-session -d -s gnb \
 			"sudo ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/gnb.sa.band78.fr1.106PRB.usrpb210.conf --gNBs.[0].min_rxtxtime 6 --rfsim --sa"
 
+		echo "Run 'tmux attach -t gnb'"
+
 		sleep 10
 
 		chmod +x ~/multi-ue.sh  
@@ -91,9 +95,13 @@ if [ "$1" == "gnb" ]; then
 		tmux new-session -d -s ue1 \
 		    "sudo ip netns exec ue1 ./nr-uesoftmodem -r 106 --numerology 1 --band 78 -C 3619200000 --rfsim --sa --uicc0.imsi 001010000000001 --rfsimulator.serveraddr 10.201.1.100 --telnetsrv --telnetsrv.listenport 9095"
 
+		echo "Run 'tmux attach -t ue1'"
+
 		echo "[*] Starting UE2 in namespace ue2"
 		tmux new-session -d -s ue2 \
 		    "sudo ip netns exec ue2 ./nr-uesoftmodem -r 106 --numerology 1 --band 78 -C 3619200000 --rfsim --sa --uicc0.imsi 001010000000002 --rfsimulator.serveraddr 10.202.1.100 --telnetsrv --telnetsrv.listenport 9096"
+
+		echo "Run 'tmux attach -t ue2'"
 
 		sleep 10 # Giving time for UEs to start		
 
@@ -113,12 +121,10 @@ if [ "$1" == "gnb" ]; then
 
 		echo "[*] Pinging Downlink 10 times to UE1"
 		ssh -t mobile@${IP_HOST_CORE} "sudo docker exec oai-ext-dn ping -c 10 $IP_UE1"
-		#sshpass -p 'mobile' ssh -o StrictHostKeyChecking=no mobile@${IP_HOST_CORE} "sudo docker exec oai-ext-dn ping -c 10 $IP_UE1" 
-
 
 		echo "[*] Pinging Downlink 10 times to UE2"
 		ssh -t mobile@${IP_HOST_CORE} "sudo docker exec oai-ext-dn ping -c 10 $IP_UE2"
-		#sshpass -p 'mobile' ssh -o StrictHostKeyChecking=no mobile@${IP_HOST_CORE} "sudo docker exec oai-ext-dn ping -c 10 $IP_UE2"
+
 
 	########################
 	#        TASK 3        #
@@ -202,18 +208,33 @@ if [ "$1" == "gnb" ]; then
 		tmux new-session -d -s gnb \
     		"sudo ./nr-softmodem -O ${CONF_PATH_TMP} --gNBs.[0].min_rxtxtime 6 --rfsim --sa 2>&1 | stdbuf -oL tee /tmp/gnb_task3_full.log"
 
-		tmux capture-pane -t gnb -p -S -3000 > /tmp/gnb_task3_full.log 
-		
+		echo "Run 'tmux attach -t gnb'"
 
 		sleep 10
 
+		tmux capture-pane -t gnb -p -S -3000 > /tmp/gnb_task3_full.log 
+		
 		head -55 /tmp/gnb_task3_full.log > /tmp/gnb_task3_startup.log 
 
-		echo "[*] Starting UE"
+
+		rm /run/netns/ue* # TO guarantee there is no previous ue
+
+		chmod +x ~/multi-ue.sh  
+
+		echo "[*] Creating Namespaces for UE1 and UE2"
+		sudo ~/multi-ue.sh -c1
+		sudo ~/multi-ue.sh -c2
 
 		if [ "$3" == "100" ]; then
-			tmux new-session -d -s ue \
-				"sudo ./nr-uesoftmodem -r 106 --numerology 1 --band 78 -C 3450720000 --rfsim --sa --uicc0.imsi 001010000000001 --rfsimulator.serveraddr 127.0.0.1"
+			#tmux new-session -d -s ue \
+			#	"sudo ./nr-uesoftmodem -r 106 --numerology 1 --band 78 -C 3450720000 --rfsim --sa --uicc0.imsi 001010000000001 --rfsimulator.serveraddr 127.0.0.1"
+
+			tmux new-session -d -s ue1 \
+		   		"sudo ip netns exec ue1 ./nr-uesoftmodem -r 106 --numerology 1 --band 78 -C 3450720000 --rfsim --sa --uicc0.imsi 001010000000001 --rfsimulator.serveraddr 10.201.1.100 --telnetsrv --telnetsrv.listenport 9095"
+
+			tmux new-session -d -s ue2 \
+		    	"sudo ip netns exec ue2 ./nr-uesoftmodem -r 106 --numerology 1 --band 78 -C 3450720000 --rfsim --sa --uicc0.imsi 001010000000002 --rfsimulator.serveraddr 10.202.1.100 --telnetsrv --telnetsrv.listenport 9096"
+
 		elif [ "$3" == "20" ]; then
 			echo "20MHz bandwidth doesn't work"
 			exit 1
@@ -221,19 +242,133 @@ if [ "$1" == "gnb" ]; then
 			#	"sudo ./nr-uesoftmodem -r 51 --numerology 1 --band 78 -C 3450720000 --rfsim --sa --uicc0.imsi 001010000000001 --rfsimulator.serveraddr 127.0.0.1" # Adjusted to 3450.72 MHz
 		fi
 
+		echo "Run 'tmux attach -t ue1'"
+		echo "Run 'tmux attach -t ue2'"
+
 		sleep 10
 
-		echo "[*] Pinging Uplink 10 times"
-		ping -c 10 $IP_EXT_DN -I oaitun_ue1 
+		echo "[*] Pinging Uplink 10 times from UE1"
+		sudo ip netns exec ue1 ping -c 10 $IP_EXT_DN -I oaitun_ue1 
 
-		IP_UE=$(ip addr show oaitun_ue1 | grep "inet " | awk '{print $2}' | cut -d/ -f1)
+		echo "[*] Pinging Uplink 10 times from UE2"
+		sudo ip netns exec ue2 ping -c 10 $IP_EXT_DN -I oaitun_ue1 # UE2 gets associated still to "oaitun_ue1"
 
-		echo "IP of UE: $IP_UE"
+		IP_UE1=$(sudo ip netns exec ue1 ip addr show oaitun_ue1 | grep "inet " | awk '{print $2}' | cut -d/ -f1)
+		IP_UE2=$(sudo ip netns exec ue2 ip addr show oaitun_ue1 | grep "inet " | awk '{print $2}' | cut -d/ -f1) # UE2 gets associated still to "oaitun_ue1"
+
+		echo "IP of UE1: $IP_UE1"
+		echo "IP of UE2: $IP_UE2"
 
 		sleep 5
 
-		echo "[*] Pinging Downlink 10 times"
-		ssh -t mobile@${IP_HOST_CORE} "sudo docker exec oai-ext-dn ping -c 10 $IP_UE"
+		echo "[*] Pinging Downlink 10 times to UE1"
+		ssh -t mobile@${IP_HOST_CORE} "sudo docker exec oai-ext-dn ping -c 10 $IP_UE1"
+
+		echo "[*] Pinging Downlink 10 times to UE2"
+		ssh -t mobile@${IP_HOST_CORE} "sudo docker exec oai-ext-dn ping -c 10 $IP_UE2"
+
+
+		echo "+----------------------+"
+		echo "|        TASK 4        |"
+		echo "+----------------------+"
+
+		for CURRENT_IP_UE in $IP_UE1 $IP_UE2; do
+
+			
+			echo "+-------------------------+"
+			echo "| Testing: $CURRENT_IP_UE |"
+			echo "+-------------------------+"
+
+
+			echo "+----------------------+"
+			echo "|          UDP         |"
+			echo "+----------------------+"
+
+			echo -en "\n\n\n"
+
+			echo "[*] Preparing iPerf UDP Downlink for throughput"
+
+			if [ "$CURRENT_IP_UE" == "$IP_UE1" ]; then
+				NS="ue1"
+			else
+				NS="ue2"
+			fi
+
+			echo "[*] Starting iPerf Server"
+			tmux new-session -d -s iperf \
+				"sudo ip netns exec $NS iperf -s -u -i 1 -B $CURRENT_IP_UE"
+
+			echo "Run 'tmux attach -t iperf'"
+
+			sleep 10
+			
+			echo "[*] Starting iPerf UDP Client for 100 seconds"
+
+			BITRATE="10M" # 10Mbits per second
+			TIME="10" # in seconds
+
+			ssh -t mobile@${IP_HOST_CORE} "sudo docker exec -it oai-ext-dn iperf -u -t $TIME -i 1 -fk -B $IP_EXT_DN -b $BITRATE -c $CURRENT_IP_UE"
+
+
+
+			echo "[*] Preparing iPerf UDP Uplink for throughput"
+
+			echo "[*] Starting iPerf Server for 100 seconds"
+			ssh -t mobile@${IP_HOST_CORE} "sudo docker exec -d oai-ext-dn iperf -s -u -i 1 -fk -B $IP_EXT_DN"
+
+			sleep 10
+
+
+			echo "[*] Starting iPerf UDP Client"
+			iperf -u -t 10 -i 1 -fk -b $BITRATE -B $CURRENT_IP_UE -c $IP_EXT_DN	
+
+
+			echo -en "\n\n\n"
+
+			echo "+----------------------+"
+			echo "|          TCP         |"
+			echo "+----------------------+"
+
+			echo -en "\n\n\n"
+
+
+			tmux kill-session -t iperf 2>/dev/null
+
+			echo "[*] Starting iPerf Server"
+			tmux new-session -d -s iperf \
+				"sudo ip netns exec $NS iperf -s -i 1 -B $CURRENT_IP_UE" 
+			
+			echo "Run 'tmux attach -t iperf'"
+
+			sleep 10
+
+			echo "[*] Starting iPerf TCP Client for 100 seconds"
+
+			BITRATE="10M" # 10Mbits per second
+
+			ssh -t mobile@${IP_HOST_CORE} "sudo docker exec -it oai-ext-dn iperf -t $TIME -i 1 -fk -B $IP_EXT_DN -c $CURRENT_IP_UE"
+
+			echo -en "\n\n\n"
+
+
+			echo "[*] Preparing iPerf TCP Uplink for throughput"
+
+			echo "[*] Starting iPerf Server for 100 seconds"
+			ssh -t mobile@${IP_HOST_CORE} "sudo docker exec -d oai-ext-dn iperf -s -i 1 -fk -B $IP_EXT_DN"
+
+			sleep 10
+
+
+			echo "[*] Starting iPerf TCP Client"
+			iperf -t $TIME -i 1 -fk -B $CURRENT_IP_UE -c $IP_EXT_DN	
+			
+
+			echo -en "\n\n\n"
+
+			tmux kill-session -t iperf 2>/dev/null
+		
+		done
+			
 
 	fi
 
