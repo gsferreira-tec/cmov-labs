@@ -168,33 +168,32 @@ if [ "$1" == "gnb" ]; then
 		elif [ "$3" == "20" ]; then			
 
 			echo "20MHz bandwidth doesn't work"
-			exit 1
 
-#			echo "[*] Changing gNB settings to 3500MHz center frequency and 20MHz bandwidth"
-#
-#			sed -i '/#/!s/^\([[:space:]]*absoluteFrequencySSB[[:space:]]*=[[:space:]]*\).*$/\1 630048;/' "$CONF_PATH_TMP"             # absoluteFrequencySSB = 630000
-#
-#			sed -i '/#/!s/^\([[:space:]]*dl_absoluteFrequencyPointA[[:space:]]*=[[:space:]]*\).*$/\1 629388;/' "$CONF_PATH_TMP"       # dl_absoluteFrequencyPointA = 626724
-#
-#			sed -i '/#/!s/^\([[:space:]]*dl_frequencyBand[[:space:]]*=[[:space:]]*\).*$/\1 78;/' "$CONF_PATH_TMP"                    # dl_frequencyBand = 78
-#
-#			sed -i '/#/!s/^\([[:space:]]*dl_subcarrierSpacing[[:space:]]*=[[:space:]]*\).*$/\1 1;/' "$CONF_PATH_TMP"                 # dl_subcarrierSpacing = 1 
-#
-#			sed -i '/#/!s/^\([[:space:]]*dl_carrierBandwidth[[:space:]]*=[[:space:]]*\).*$/\1 51;/' "$CONF_PATH_TMP"                 # dl_carrierBandwidth = 66
-#
-#			sed -i 's/^\([[:space:]]*initialDLBWPlocationAndBandwidth[[:space:]]*=[[:space:]]*\)[0-9]*/\1 13750/' "$CONF_PATH_TMP"  # initialDLBWPlocationAndBandwidth = 4700 
-#
-#			sed -i '/#/!s/^\([[:space:]]*initialDLBWPsubcarrierSpacing[[:space:]]*=[[:space:]]*\).*$/\1 1;/' "$CONF_PATH_TMP"        # initialDLBWPsubcarrierSpacing = 1
-#
-#			sed -i '/#/!s/^\([[:space:]]*initialDLBWPcontrolResourceSetZero[[:space:]]*=[[:space:]]*\).*$/\1 17;/' "$CONF_PATH_TMP"  # CORESET0. Had to change to 17 because OAI doesn't support this value. even though 3GPP does
-#
-#			sed -i '/#/!s/^\([[:space:]]*ul_frequencyBand[[:space:]]*=[[:space:]]*\).*$/\1 78;/' "$CONF_PATH_TMP"                    # ul_frequencyBand = 78
-#
-#			sed -i '/#/!s/^\([[:space:]]*ul_carrierBandwidth[[:space:]]*=[[:space:]]*\).*$/\1 51;/' "$CONF_PATH_TMP"                 # ul_carrierBandwidth = 66
-#
-#			sed -i 's/^\([[:space:]]*initialULBWPlocationAndBandwidth[[:space:]]*=[[:space:]]*\)[0-9]*/\1 13750/' "$CONF_PATH_TMP"  # initialULBWPlocationAndBandwidth = 4700 
-#
-#			sed -i '/#/!s/^\([[:space:]]*initialULBWPsubcarrierSpacing[[:space:]]*=[[:space:]]*\).*$/\1 1;/' "$CONF_PATH_TMP"        # initialULBWPsubcarrierSpacing = 1
+			echo "[*] Changing gNB settings to 3500MHz center frequency and 20MHz bandwidth"
+
+			sed -i '/#/!s/^\([[:space:]]*absoluteFrequencySSB[[:space:]]*=[[:space:]]*\).*$/\1 630048;/' "$CONF_PATH_TMP"             # absoluteFrequencySSB = 630000
+
+			sed -i '/#/!s/^\([[:space:]]*dl_absoluteFrequencyPointA[[:space:]]*=[[:space:]]*\).*$/\1 629388;/' "$CONF_PATH_TMP"       # dl_absoluteFrequencyPointA = 626724
+
+			sed -i '/#/!s/^\([[:space:]]*dl_frequencyBand[[:space:]]*=[[:space:]]*\).*$/\1 78;/' "$CONF_PATH_TMP"                    # dl_frequencyBand = 78
+
+			sed -i '/#/!s/^\([[:space:]]*dl_subcarrierSpacing[[:space:]]*=[[:space:]]*\).*$/\1 1;/' "$CONF_PATH_TMP"                 # dl_subcarrierSpacing = 1 
+
+			sed -i '/#/!s/^\([[:space:]]*dl_carrierBandwidth[[:space:]]*=[[:space:]]*\).*$/\1 51;/' "$CONF_PATH_TMP"                 # dl_carrierBandwidth = 66
+
+			sed -i 's/^\([[:space:]]*initialDLBWPlocationAndBandwidth[[:space:]]*=[[:space:]]*\)[0-9]*/\1 13750/' "$CONF_PATH_TMP"  # initialDLBWPlocationAndBandwidth = 4700 
+
+			sed -i '/#/!s/^\([[:space:]]*initialDLBWPsubcarrierSpacing[[:space:]]*=[[:space:]]*\).*$/\1 1;/' "$CONF_PATH_TMP"        # initialDLBWPsubcarrierSpacing = 1
+
+			sed -i '/#/!s/^\([[:space:]]*initialDLBWPcontrolResourceSetZero[[:space:]]*=[[:space:]]*\).*$/\1 17;/' "$CONF_PATH_TMP"  # CORESET0. Had to change to 17 because OAI doesn't support this value. even though 3GPP does
+
+			sed -i '/#/!s/^\([[:space:]]*ul_frequencyBand[[:space:]]*=[[:space:]]*\).*$/\1 78;/' "$CONF_PATH_TMP"                    # ul_frequencyBand = 78
+
+			sed -i '/#/!s/^\([[:space:]]*ul_carrierBandwidth[[:space:]]*=[[:space:]]*\).*$/\1 51;/' "$CONF_PATH_TMP"                 # ul_carrierBandwidth = 66
+
+			sed -i 's/^\([[:space:]]*initialULBWPlocationAndBandwidth[[:space:]]*=[[:space:]]*\)[0-9]*/\1 13750/' "$CONF_PATH_TMP"  # initialULBWPlocationAndBandwidth = 4700 
+
+			sed -i '/#/!s/^\([[:space:]]*initialULBWPsubcarrierSpacing[[:space:]]*=[[:space:]]*\).*$/\1 1;/' "$CONF_PATH_TMP"        # initialULBWPsubcarrierSpacing = 1
 
 		else 
 			echo "For the third argument use either 20 (for 20MHz bandwidth) or 100 (for 100MHz bandwidth)"
@@ -224,9 +223,6 @@ if [ "$1" == "gnb" ]; then
 		sudo ~/multi-ue.sh -c2
 
 		if [ "$3" == "100" ]; then
-			#tmux new-session -d -s ue \
-			#	"sudo ./nr-uesoftmodem -r 106 --numerology 1 --band 78 -C 3450720000 --rfsim --sa --uicc0.imsi 001010000000001 --rfsimulator.serveraddr 127.0.0.1"
-
 			BW="100"
 
 			tmux new-session -d -s ue1 \
@@ -236,13 +232,16 @@ if [ "$1" == "gnb" ]; then
 		    	"sudo ip netns exec ue2 ./nr-uesoftmodem -r 106 --numerology 1 --band 78 -C 3450720000 --rfsim --sa --uicc0.imsi 001010000000002 --rfsimulator.serveraddr 10.202.1.100 --telnetsrv --telnetsrv.listenport 9096"
 
 		elif [ "$3" == "20" ]; then
+			BW="20"
 
 			echo "20MHz bandwidth doesn't work"
-			exit 1
 
-			BW="20"
-			#tmux new-session -d -s ue \
-			#	"sudo ./nr-uesoftmodem -r 51 --numerology 1 --band 78 -C 3450720000 --rfsim --sa --uicc0.imsi 001010000000001 --rfsimulator.serveraddr 127.0.0.1" # Adjusted to 3450.72 MHz
+			tmux new-session -d -s ue1 \
+		   		"sudo ip netns exec ue1 ./nr-uesoftmodem -r 51 --numerology 1 --band 78 -C 3450720000 --rfsim --sa --uicc0.imsi 001010000000001 --rfsimulator.serveraddr 10.201.1.100 --telnetsrv --telnetsrv.listenport 9095"
+
+			tmux new-session -d -s ue2 \
+		    	"sudo ip netns exec ue2 ./nr-uesoftmodem -r 51 --numerology 1 --band 78 -C 3450720000 --rfsim --sa --uicc0.imsi 001010000000002 --rfsimulator.serveraddr 10.202.1.100 --telnetsrv --telnetsrv.listenport 9096"
+
 		fi
 
 		echo "Run 'tmux attach -t ue1'"
