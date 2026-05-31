@@ -24,4 +24,17 @@ Notes:
   - For task 3, the third argument (20MHz or 100MHz) will define which parameters will be placed in the `.conf` file, to comply with the https://www.sqimway.com/nr_refA.php. **At the moment 20MHz can't be reproduced.**
   - For task 4, the third argument will still be used, and will define the settings for **UEs**. ICMPs pings to determine RTT for both UEs will happen (Uplink and Downlink cases, similar to Task 2) and then using the `iperf` command (Uplink and Downlink cases) we will determine the throughput of both devices, in a TCP vs UDP situation.
     - The `.txt` and `.csv` files exported to ~/ can then be processed by the `plots-task34/plotter.py` Python script that will plot the graphics necessary to insert in the report. 
-  - For task 5,
+  - For task 5, the web monitoring interface needs only `server.py` to be run with:
+```bash
+	python3 server.py # running on port 8888  
+``` 
+  
+- At the moment `x2go` is not allowing the web browser to open therefore the way to access the Web 
+UI is by port-forwarding through ssh on to the client/user machine with:
+
+```bash
+	ssh -fNL 8888:localhost:8888 <remote_hostname>@<remote_host_IP>
+```
+
+- After that just open a browser and type the url: `http://localhost:8888/index.html` and the UI comes
+up.
