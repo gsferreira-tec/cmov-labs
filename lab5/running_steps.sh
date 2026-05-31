@@ -127,7 +127,7 @@ if [ "$1" == "gnb" ]; then
 	########################
 	#        TASK 3        #
 	########################
-	
+
 	elif [ "$2" == "3" ] || [ "$2" == "three" ]; then
 
 		echo "+----------------------+"
@@ -139,7 +139,7 @@ if [ "$1" == "gnb" ]; then
 		if [ "$3" == "100" ]; then
 
 			echo "[*] Changing gNB settings to 3500MHz center frequency and 100MHz bandwidth"
-			
+
 			sed -i '/#/!s/^\([[:space:]]*absoluteFrequencySSB[[:space:]]*=[[:space:]]*\).*$/\1 630048;/' "$CONF_PATH_TMP" # absoluteFrequencySSB = 630000
 
 			sed -i '/#/!s/^\([[:space:]]*dl_absoluteFrequencyPointA[[:space:]]*=[[:space:]]*\).*$/\1 628776;/' "$CONF_PATH_TMP" # dl_absoluteFrequencyPointA = 626724. Had to change to 628776 because OAI doesn't support this value. even though 3GPP does
@@ -167,8 +167,6 @@ if [ "$1" == "gnb" ]; then
 		
 		elif [ "$3" == "20" ]; then			
 
-			echo "20MHz bandwidth doesn't work"
-
 			echo "[*] Changing gNB settings to 3500MHz center frequency and 20MHz bandwidth"
 
 			sed -i '/#/!s/^\([[:space:]]*absoluteFrequencySSB[[:space:]]*=[[:space:]]*\).*$/\1 630048;/' "$CONF_PATH_TMP"             # absoluteFrequencySSB = 630000
@@ -185,7 +183,7 @@ if [ "$1" == "gnb" ]; then
 
 			sed -i '/#/!s/^\([[:space:]]*initialDLBWPsubcarrierSpacing[[:space:]]*=[[:space:]]*\).*$/\1 1;/' "$CONF_PATH_TMP"        # initialDLBWPsubcarrierSpacing = 1
 
-			sed -i '/#/!s/^\([[:space:]]*initialDLBWPcontrolResourceSetZero[[:space:]]*=[[:space:]]*\).*$/\1 17;/' "$CONF_PATH_TMP"  # CORESET0. Had to change to 17 because OAI doesn't support this value. even though 3GPP does
+			sed -i '/#/!s/^\([[:space:]]*initialDLBWPcontrolResourceSetZero[[:space:]]*=[[:space:]]*\).*$/\1 10;/' "$CONF_PATH_TMP"  # CORESET0. Had to change to 17 because OAI doesn't support this value. even though 3GPP does
 
 			sed -i '/#/!s/^\([[:space:]]*ul_frequencyBand[[:space:]]*=[[:space:]]*\).*$/\1 78;/' "$CONF_PATH_TMP"                    # ul_frequencyBand = 78
 
@@ -234,13 +232,11 @@ if [ "$1" == "gnb" ]; then
 		elif [ "$3" == "20" ]; then
 			BW="20"
 
-			echo "20MHz bandwidth doesn't work"
-
 			tmux new-session -d -s ue1 \
-		   		"sudo ip netns exec ue1 ./nr-uesoftmodem -r 51 --numerology 1 --band 78 -C 3450720000 --rfsim --sa --uicc0.imsi 001010000000001 --rfsimulator.serveraddr 10.201.1.100 --telnetsrv --telnetsrv.listenport 9095"
+		   		"sudo ip netns exec ue1 ./nr-uesoftmodem -r 51 --numerology 1 --band 78 -C 3450000000 --rfsim --sa --uicc0.imsi 001010000000001 --rfsimulator.serveraddr 10.201.1.100 --ssb 210 --telnetsrv --telnetsrv.listenport 9095"
 
 			tmux new-session -d -s ue2 \
-		    	"sudo ip netns exec ue2 ./nr-uesoftmodem -r 51 --numerology 1 --band 78 -C 3450720000 --rfsim --sa --uicc0.imsi 001010000000002 --rfsimulator.serveraddr 10.202.1.100 --telnetsrv --telnetsrv.listenport 9096"
+		    	"sudo ip netns exec ue2 ./nr-uesoftmodem -r 51 --numerology 1 --band 78 -C 3450000000 --rfsim --sa --uicc0.imsi 001010000000002 --rfsimulator.serveraddr 10.202.1.100 --ssb 210 --telnetsrv --telnetsrv.listenport 9096"
 
 		fi
 
