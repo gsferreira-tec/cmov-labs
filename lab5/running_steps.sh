@@ -1,14 +1,12 @@
 #!/bin/bash 
 
-IP_HOST_CORE="10.227.20.22"
+IP_HOST_CORE="10.227.20.82"
 
-IP_HOST_GNB="10.227.20.12"
+IP_HOST_GNB="10.227.20.72"
 
 IP_DOCKER_CORE_SUBNET="192.168.70.128/26"
 IP_AMF="192.168.70.132"
 IP_EXT_DN="192.168.70.135"
-
-FILE_PATH="/tmp/"
 
 CONF_PATH=~/oai/targets/PROJECTS/GENERIC-NR-5GC/CONF/gnb.sa.band78.fr1.106PRB.usrpb210.conf
 CONF_PATH_TMP=/tmp/gnb_task3.conf
@@ -390,20 +388,20 @@ elif [ "$1" == "core" ]; then
 	########################
 
 	if [ "$2" == "1" ] || [ "$2" == "one" ]; then
-		sudo rm ${FILE_PATH}dl-ul-pings-task1.pcap
+		sudo rm ~/dl-ul-pings-task1.pcap
 
 		echo "[*] Listening for ${IP_EXT_DN} IP for Task 1 communicating with one UE"
-		sudo timeout 120 tcpdump -i any "udp port 2152 or host ${IP_EXT_DN}" -U -w ${FILE_PATH}dl-ul-pings-task1.pcap
+		sudo timeout 120 tcpdump -i any "udp port 2152 or host ${IP_EXT_DN}" -U -w ~/dl-ul-pings-task1.pcap
 
 
 	########################
 	#        TASK 2        #
 	########################
 	elif [ "$2" == "2" ] || [ "$2" == "two" ]; then
-		sudo rm ${FILE_PATH}dl-ul-pings-task2.pcap
+		sudo rm ~/dl-ul-pings-task2.pcap
 
 		echo "[*] Listening for ${IP_EXT_DN} IP for Task 2 communicating with UE1 and then UE2"
-		sudo timeout 180 tcpdump -i any "udp port 2152 or host ${IP_EXT_DN}" -U -w ${FILE_PATH}dl-ul-pings-task2.pcap
+		sudo timeout 180 tcpdump -i any "udp port 2152 or host ${IP_EXT_DN}" -U -w ~/dl-ul-pings-task2.pcap
 	
 	
 
@@ -413,10 +411,10 @@ elif [ "$1" == "core" ]; then
 	
 	elif [ "$2" == "3" ] || [ "$2" == "three" ]; then
 
-		sudo rm ${FILE_PATH}dl-ul-pings-task3.pcap
+		sudo rm ~/dl-ul-pings-task3.pcap
 
 		echo "[*] Listening for ${IP_EXT_DN} IP for Task 3 communicating with one UE at 100MHz at a 3500MHz"
-		sudo timeout 180 tcpdump -i any "udp port 2152 or host ${IP_EXT_DN}" -U -w ${FILE_PATH}dl-ul-pings-task3.pcap
+		sudo timeout 180 tcpdump -i any "udp port 2152 or host ${IP_EXT_DN}" -U -w ~/dl-ul-pings-task3.pcap
 
 	fi
 
