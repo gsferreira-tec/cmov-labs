@@ -3,8 +3,8 @@ import json, os, re, csv, time
 from urllib.parse import urlparse
 
 BASE = os.path.expanduser('~')
-# APP_DIR is where index.html is served from. Keep it equal to BASE so the
-# dashboard sits in the same folder the data files are written to (~).
+# index.html is served from here. Keep equal to BASE so the dashboard sits
+# in the same folder where running_steps.sh drops the throughput/rtt files.
 APP_DIR = BASE
 
 STREAM_INTERVAL = 1.0   # seconds between pushes on /api/stream
@@ -14,13 +14,44 @@ INTERVAL_RE = re.compile(r'^\s*(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)\s*$')
 TIME_RE     = re.compile(r'time[=<]\s*([0-9.]+)\s*ms', re.IGNORECASE)
 SUMMARY_RE  = re.compile(r'min/avg/max/mdev\s*=\s*([0-9.]+)/([0-9.]+)/([0-9.]+)/([0-9.]+)')
 
+# Metrics the xApp (xapp_kpm_rc.c) can emit. Kept here so the API only ever
+# reports known KPM names; everything else from the CSV is grouped as "other".
+KPM_KNOWN = {
+    'DRB.UEThpDl', 'DRB.UEThpUl',
+    'RRU.PrbTotDl', 'RRU.PrbTotUl',
+    'DRB.PdcpSduVolumeDL', 'DRB.PdcpSduVolumeUL',
+    'DRB.RlcSduDelayDl',
+}
+
+
+KPM_CSV="/home/mobile/flexric/build/examples/xApp/x/kpm_rc/"
+
+def kpm_csv_path():
+    """
+    The xApp opens a *relative* "kpm_results.csv" in its working directory,
+    which is usually the FlexRIC build dir, not ~. Resolve it like this:
+      1. $KPM_CSV if set (recommended),
+      2. ~/kpm_results.csv,
+      3. ./kpm_results.csv (cwd of this server).
+    """
+
+    env = os.environ.get('KPM_CSV')
+    if env:
+        return os.path.expanduser(env)
+    candidates = [os.path.join(BASE, 'kpm_results.csv'),
+                  os.path.join(os.getcwd(), 'kpm_results.csv')]
+    for c in candidates:
+        if os.path.exists(c):
+            return c
+    return candidates[0]
+
 
 class Handler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=APP_DIR, **kwargs)
 
     def log_message(self, *args):
-        pass  # keep the console quiet during a run
+        pass
 
     def do_GET(self):
         path = urlparse(self.path).path
@@ -42,16 +73,13 @@ class Handler(SimpleHTTPRequestHandler):
         self.wfile.write(body)
 
     def _stream(self):
-        # Server-Sent Events: keep the connection open and push a fresh
-        # snapshot every STREAM_INTERVAL seconds. ThreadingHTTPServer gives
-        # each connection its own thread, so this loop is safe.
         self.send_response(200)
         self.send_header('Content-Type', 'text/event-stream')
         self.send_header('Cache-Control', 'no-store')
         self.send_header('Connection', 'keep-alive')
         self.end_headers()
         try:
-            self.wfile.write(b'retry: 2000\n\n')   # client reconnect delay (ms)
+            self.wfile.write(b'retry: 2000\n\n')
             self.wfile.flush()
             while True:
                 payload = json.dumps(collect_metrics())
@@ -59,11 +87,11 @@ class Handler(SimpleHTTPRequestHandler):
                 self.wfile.flush()
                 time.sleep(STREAM_INTERVAL)
         except (BrokenPipeError, ConnectionResetError):
-            return  # browser tab closed / navigated away
+            return
 
 
+# ---------------------------------------------------------------- iperf / rtt
 def parse_ping_file(path):
-    """Extract per-packet RTTs and a summary from a ping log."""
     samples, summary = [], {}
     if not os.path.exists(path):
         return {'samples': samples, 'summary': summary}
@@ -76,8 +104,6 @@ def parse_ping_file(path):
             if s:
                 summary = {'min': float(s.group(1)), 'avg': float(s.group(2)),
                            'max': float(s.group(3)), 'mdev': float(s.group(4))}
-    # If the test is still running there's no final summary line yet,
-    # so report a live running summary instead.
     if not summary and samples:
         summary = {'min': min(samples), 'avg': sum(samples) / len(samples),
                    'max': max(samples), 'mdev': 0.0, 'live': True}
@@ -85,13 +111,7 @@ def parse_ping_file(path):
 
 
 def parse_iperf_csv(path):
-    """
-    Parse iPerf CSV output (-y C). Column layout:
-        ts, srcip, srcport, dstip, dstport, id, interval, transfer_bytes, bandwidth_bps, ...
-    Column 8 is bandwidth in BITS/sec -> Mbps = value / 1e6.
-    Rows whose interval is wider than a normal tick (e.g. the 0.0-60.0
-    cumulative line) are flagged as summary so the UI can skip them.
-    """
+    """Column 8 is bandwidth in BITS/sec -> Mbps = value / 1e6."""
     rows = []
     if not os.path.exists(path):
         return rows
@@ -103,22 +123,59 @@ def parse_iperf_csv(path):
             if not m:
                 continue
             try:
-                start = float(m.group(1))
-                end = float(m.group(2))
-                bps = float(r[8])
+                start = float(m.group(1)); end = float(m.group(2)); bps = float(r[8])
             except ValueError:
                 continue
-            rows.append({
-                'interval': r[6].strip(),
-                't_start': start,
-                't_end': end,
-                'kbps': bps / 1e3,
-                'mbps': bps / 1e6,
-                'summary': (end - start) > 1.5,
-            })
+            rows.append({'interval': r[6].strip(), 't_start': start, 't_end': end,
+                         'kbps': bps / 1e3, 'mbps': bps / 1e6,
+                         'summary': (end - start) > 1.5})
     return rows
 
 
+# ----------------------------------------------------------------- xApp KPM
+def parse_kpm_csv(path):
+    """
+    Parse kpm_results.csv written by xapp_kpm_rc.c.
+    Format: ts_now_us, collect_start_us, latency_us, metric, value
+    Returns time series per metric, with x = seconds since the first sample.
+    """
+    metrics = {}
+    other = {}
+    first_ts = None
+    last_latency = None
+    if not os.path.exists(path):
+        return {'present': False, 'metrics': metrics, 'other_metrics': other, 'path': path}
+
+    with open(path, 'r', errors='ignore') as f:
+        for line in f:
+            parts = line.rstrip('\n').split(',')
+            if len(parts) < 5:
+                continue
+            try:
+                ts = float(parts[0])
+                val = float(parts[4])
+            except ValueError:
+                continue  # header row or junk
+            metric = parts[3].strip()
+            if first_ts is None:
+                first_ts = ts
+            try:
+                last_latency = float(parts[2])
+            except ValueError:
+                pass
+            point = {'t': (ts - first_ts) / 1e6, 'y': val}
+            bucket = metrics if metric in KPM_KNOWN else other
+            bucket.setdefault(metric, []).append(point)
+
+    return {'present': bool(metrics or other),
+            'metrics': metrics,
+            'other_metrics': other,
+            'first_ts_us': first_ts,
+            'last_latency_us': last_latency,
+            'path': path}
+
+
+# ----------------------------------------------------------------- aggregate
 def collect_metrics():
     now = time.time()
     out = {'throughput': {}, 'rtt': {}, 'present_files': [],
@@ -143,10 +200,20 @@ def collect_metrics():
             for kind in ['ul', 'dl']:
                 fn = os.path.join(BASE, f'rtt_{kind}_{ns}_{bw}.txt')
                 out['rtt'][bw][f'{kind}_{ns}'] = parse_ping_file(fn)
+
+    # xApp KPM stream
+    kpm_path = kpm_csv_path()
+    kpm = parse_kpm_csv(kpm_path)
+    try:
+        kpm['active'] = os.path.exists(kpm_path) and (now - os.path.getmtime(kpm_path)) <= ACTIVE_WINDOW
+    except OSError:
+        kpm['active'] = False
+    out['kpm'] = kpm
     return out
 
 
 if __name__ == '__main__':
     port = 8000
     print(f'Serving on http://127.0.0.1:{port}  (live stream at /api/stream)')
+    print(f'Reading KPM from: {kpm_csv_path()}   (override with KPM_CSV=/path/to/kpm_results.csv)')
     ThreadingHTTPServer(('0.0.0.0', port), Handler).serve_forever()

@@ -646,7 +646,10 @@ int main(int argc, char* argv[])
   // END RC
   ////////////
 
-  sleep(5);
+//  sleep(5);
+  
+  printf("[KPM RC]: monitoring... Press Ctrl+C to stop\n");
+  while(1) pause();
 
   for (int i = 0; i < nodes.len; ++i) {
     // Remove the handle previously returned
