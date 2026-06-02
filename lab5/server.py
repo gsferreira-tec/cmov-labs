@@ -2,7 +2,9 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 import json, os, re, csv
 from urllib.parse import urlparse
 BASE = os.path.expanduser('~')
-APP_DIR = os.path.join(BASE, 'output', 'lab5_monitor')
+#APP_DIR = os.path.join(BASE, 'output', 'lab5_monitor')
+APP_DIR = BASE
+
 
 class Handler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
