@@ -637,6 +637,7 @@ int main(int argc, char* argv[])
       // Generate RC CONTROL message
       rc_ctrl_req_data_t rc_ctrl = gen_rc_ctrl_msg(n->rf[idx].defn.rc.ctrl);
 
+      printf("[KPM RC]: >>> Sending RC CONTROL (QoS flow mapping) to gNB for last-seen UE\n"); // making the RC control signal visible...
       control_sm_xapp_api(&n->id, RC_ran_function, &rc_ctrl);
 
       free_rc_ctrl_req_data(&rc_ctrl);
