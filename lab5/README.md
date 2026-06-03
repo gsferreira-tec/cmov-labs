@@ -26,15 +26,16 @@ Notes:
     - The `.txt` and `.csv` files exported to ~/ can then be processed by the `plots-task34/plotter.py` Python script that will plot the graphics necessary to insert in the report. 
   - For task 5, the web monitoring interface needs only `server.py` to be run with:
 ```bash
-	python3 server.py # running on port 8888  
+  KPM_CSV=/path/to/kpm_resutls.csv python3 server.py # running on port 8000  
 ``` 
   
 - At the moment `x2go` is not allowing the web browser to open therefore the way to access the Web 
-UI is by port-forwarding through ssh on to the client/user machine with:
+UI remotely is by port-forwarding through ssh on to the client/user machine with:
 
 ```bash
-	ssh -fNL 8888:localhost:8888 <remote_hostname>@<remote_host_IP>
+	ssh -fNL <port_no>:localhost:<port_no> <remote_hostname>@<remote_host_IP>
 ```
 
-- After that just open a browser and type the url: `http://localhost:8888/index.html` and the UI comes
-up.
+- After that just open a browser and type the url: `http://localhost:<port_no>/index.html` and the UI comes
+up. [**Note:** index.html must be in the home directoty (~/) of the remote machine]
+

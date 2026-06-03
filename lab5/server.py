@@ -24,8 +24,6 @@ KPM_KNOWN = {
 }
 
 
-KPM_CSV="/home/mobile/flexric/build/examples/xApp/x/kpm_rc/"
-
 def kpm_csv_path():
     """
     The xApp opens a *relative* "kpm_results.csv" in its working directory,
